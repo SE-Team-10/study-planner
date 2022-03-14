@@ -1,5 +1,6 @@
 # study-planner
 ### Setup
-In the main directory and in the client directory run: `npm install`
+In the server and client directories run: `npm install`
 ### Run
-`npm start` in the main directory, followed by the client directory.
+In different terminals, run `npm start` in `/server` followed by `/client`
+
