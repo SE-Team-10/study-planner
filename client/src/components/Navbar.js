@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-container">
+        <div className="navbar-container container">
           <div className="navbar-brand">StudyPlanner</div>
           <ul className={"nav-menu"}>
             <li className={splitLocation[1] === "" ? "active" : ""}>

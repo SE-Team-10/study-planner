@@ -31,8 +31,8 @@ class App extends React.Component {
     return (
       <>
         <Router>
+          <p className="container">{this.state.data}</p>
           <Navbar />
-          <p className="checkExpress">{this.state.data}</p>
           <Switch>
             <Route path="/" exact component={Dashbaord} />
             <Route path="/chart" exact component={GanttChart} />

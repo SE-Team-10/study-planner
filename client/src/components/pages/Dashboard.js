@@ -3,9 +3,9 @@ import "../../App.css";
 
 function Dashbaord() {
   return (
-    <div>
-      <h3>Semester Progress</h3>
-      <h3>Upcoming Deadlines</h3>
+    <div className="container">
+      <h2>Semester Progress</h2>
+      <h2>Upcoming Deadlines</h2>
     </div>
   );
 }

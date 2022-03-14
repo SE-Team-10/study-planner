@@ -3,7 +3,7 @@ import "../../App.css";
 
 function AddNew() {
   return (
-    <div>
+    <div className="container">
       <h1>Add New</h1>
     </div>
   );
