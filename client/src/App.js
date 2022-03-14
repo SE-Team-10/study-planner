@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Dashbaord from "./components/pages/Dashboard";
+import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
 import AddNew from "./components/pages/addnew";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -34,7 +34,7 @@ class App extends React.Component {
           <p className="test">{this.state.data}</p>
           <Navbar />
           <Switch>
-            <Route path="/" exact component={Dashbaord} />
+            <Route path="/" exact component={Dashboard} />
             <Route path="/chart" exact component={GanttChart} />
             <Route path="/addnew" exact component={AddNew} />
           </Switch>

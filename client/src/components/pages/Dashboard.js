@@ -9,7 +9,7 @@ const testData = [
   { name: "VOIP Project", completed: 90, module:"Networks", type:"Group Coursework", day:2, month:"Apr" },
 ];
 
-function Dashbaord() {
+function Dashboard() {
   return (
     <div className="container">
       <h2>Semester Progress</h2>
@@ -26,4 +26,4 @@ function Dashbaord() {
   );
 }
 
-export default Dashbaord;
+export default Dashboard;
