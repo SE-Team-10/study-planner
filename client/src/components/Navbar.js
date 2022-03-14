@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button } from "./Button";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../logo.svg";
 import "./Navbar.scss";
 
 function Navbar() {

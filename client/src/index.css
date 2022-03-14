@@ -19,3 +19,13 @@ code {
   margin: auto;
   padding: 0 20px;
 }
+
+.test{
+  position: fixed;
+bottom: 0;
+text-align: center;
+width: 100%;
+opacity: 0.5;
+font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

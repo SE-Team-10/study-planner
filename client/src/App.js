@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <p className="container">{this.state.data}</p>
+          <p className="test">{this.state.data}</p>
           <Navbar />
           <Switch>
             <Route path="/" exact component={Dashbaord} />
