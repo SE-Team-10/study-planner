@@ -53,3 +53,36 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.navbar-account{
+  border: 2px solid #ddd;
+  float: right;
+  height: 40px;
+  width: 40px;
+  background-color: #777;
+  border-radius: 100%;
+  margin: 6px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .account-menu{
+    display:none;
+  }
+  &:hover{
+  border:2px solid #2c57ff;
+  cursor: pointer;
+  .account-menu{
+    display:block;
+    background:#fff;
+    position:absolute;
+    top:50px;
+    left:0;
+    padding:1em;
+    border-radius:6px;
+  }
+  ul{
+  display: grid
+  }
+
+  }
+}
+

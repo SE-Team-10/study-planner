@@ -30,8 +30,7 @@
     .infoBox{
       margin: auto 1em;
       .title{
-        font-size: 1.2em;
-        font-weight: 600;
+        margin: 0;
       }
       .info{
         font-size: 0.7em;
@@ -44,7 +43,7 @@
 
   
   .progressBar{
-    height: 10px;
+    height: 18px;
     width: 100%;
     background-color: inherit;
     border-radius: 0 6px 6px 6px;
@@ -53,7 +52,15 @@
       background-color: #2c57ff;
       text-align: right;
       border-radius: inherit;
+      color: #fff;
+      font-size:14px;
+      line-height:14px;
     }
+    .text{
+    color: #fff;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;}
   }
   
 }

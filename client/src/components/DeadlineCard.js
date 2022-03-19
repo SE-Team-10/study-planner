@@ -15,14 +15,14 @@ const DeadlineCard = (props) => {
               <div className="month">{month}</div>
           </div>
           <div className="infoBox">
-              <div className="title">{name}</div>
+              <h3 className="title">{name}</h3>
               <div className="info">{module}</div>
               <div className="info">{type}</div>
           </div>
         </div>
 
         <div className="progressBar">
-          <div className="fill" style={{width: `${completed}%`}}></div>
+          <div className="fill" style={{width: `${completed}%`}}><span className="text">{completed}%</span></div>
         </div>
         
     </div>

@@ -27,6 +27,15 @@ function Navbar() {
               <Link to="/addnew">Add New</Link>
             </li>
           </ul>
+          <div className="navbar-account" style={{backgroundImage: `url(/profile.png)`}}>
+            <div className="account-menu">
+            <ul>
+                <li>Settings</li>
+                <li>Log out</li>
+            </ul>
+            </div>
+          </div>
+
         </div>
       </nav>
     </>

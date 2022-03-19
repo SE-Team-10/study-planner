@@ -8,10 +8,12 @@
     background: linear-gradient(to right, #6b2cff, #2c57ff);
     text-align: right;
     border-radius: inherit;
+    width: 0%;
+    transition: width 0.5s;
     .label{
       margin: 0.5em;
       color: #fff;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1.3em;
       line-height: 1.5em;
     }
