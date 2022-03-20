@@ -3,7 +3,7 @@ import "./DeadlineCard.scss";
 
 
 const DeadlineCard = (props) => {
-    const { name, actualEnd, module, type, completed, children } = props;
+    const { name, txcolor, actualEnd, module, type, completed, children } = props;
 
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var utcDate = new Date(actualEnd);
@@ -15,7 +15,7 @@ const DeadlineCard = (props) => {
   return (
     <div className="card">
         <div className="cardFlex">
-          <div className="date">
+          <div className="date" style={{color:`${txcolor}`}}>
               <div className="day">{day}</div>
               <div className="month">{month}</div>
           </div>

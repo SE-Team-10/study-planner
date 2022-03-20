@@ -5,6 +5,7 @@ import GanttChart from "./components/pages/chart";
 import AddNew from "./components/pages/addnew";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import {Helmet} from "react-helmet";
 
 class App extends React.Component {
   state = {
@@ -16,6 +17,10 @@ class App extends React.Component {
       .then((res) => this.setState({ data: res.express }))
       .catch((err) => console.log(err));
   }
+
+
+
+
   // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
     const response = await fetch("/api");
@@ -31,7 +36,11 @@ class App extends React.Component {
 
   render() {
     return (
+
       <>
+        <Helmet>
+          <script src="testing.js" type="text/javascript" />
+        </Helmet>
         <Router>
           <p className="test">{this.state.data}</p>
           <Navbar />

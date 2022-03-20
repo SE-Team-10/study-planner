@@ -47,7 +47,7 @@
     height: 18px;
     width: 100%;
     background-color: inherit;
-    border-radius: 0 6px 6px 6px;
+    border-radius: 0 0 6px 6px;
     .fill{
       height: 100%;
       background-color: #2c57ff;
@@ -58,10 +58,11 @@
       line-height:14px;
     }
     .text{
-    color: #fff;
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: 600;}
+      color: #fff;
+      font-size: 1em;
+      line-height: 1.2em;
+      font-weight: 600;
+      margin-right: 5px;}
   }
   
 }

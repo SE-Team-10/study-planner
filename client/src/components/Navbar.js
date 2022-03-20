@@ -30,8 +30,8 @@ function Navbar() {
           <div className="navbar-account" style={{backgroundImage: `url(/profile.png)`}}>
             <div className="account-menu">
             <ul>
-                <li>Settings</li>
-                <li>Log out</li>
+                <li><Link to="#">Settings</Link></li>
+                <li><Link to="#">Log out</Link></li>
             </ul>
             </div>
           </div>
