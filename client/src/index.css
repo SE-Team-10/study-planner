@@ -36,3 +36,7 @@ opacity: 0.5;
 font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.ganttChart{
+    height: 90vh;
+}
