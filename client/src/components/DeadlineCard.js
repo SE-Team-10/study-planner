@@ -3,8 +3,13 @@ import "./DeadlineCard.scss";
 
 
 const DeadlineCard = (props) => {
-    const { name, day, month, module, type, completed } = props;
+    const { name, actualEnd, module, type, completed, children } = props;
 
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var utcDate = new Date(actualEnd);
+
+    var month = months[utcDate.getMonth()];
+    var day = utcDate.getDate();
 
 
   return (
@@ -22,10 +27,10 @@ const DeadlineCard = (props) => {
         </div>
 
         <div className="progressBar">
-          <div className="fill" style={{width: `${completed}%`}}><span className="text">{completed}%</span></div>
+          <div className="fill" style={{width: `${completed}`}}><span className="text">{completed}</span></div>
         </div>
-        
     </div>
+
 
     
   );
