@@ -33,6 +33,13 @@ function img() {
 				connectTo: "1_4",
 				connectorType: "start-start",
 				progressValue: "80%"
+			},
+			{
+				id: "1_4",
+				name: "Revision",
+				actualStart: Date.UTC(2022, 2, 30),
+				actualEnd: Date.UTC(2022, 2, 30),
+				progressValue: "80%"
 			}
 
 		]
@@ -44,6 +51,12 @@ function img() {
 			actualEnd: Date.UTC(2022, 3, 28),
 			module: "Software Engineering",
 			type:"Group Coursework",
+			notes:"The goal of the project is to give you experience of a team-based development project in a\n" +
+				"realistic setting such as you might encounter it in an industrial environment. In this project\n" +
+				"you can apply the knowledge you learned during the lectures. The project involves analysing\n" +
+				"a given project spec, planning and managing the project execution, designing, implementing\n" +
+				"and testing system modules, integrating these systems modules with those programmed by\n" +
+				"others, and presenting the final product.",
 			children: [{
 				id: "1_1",
 				name: "Use cases",

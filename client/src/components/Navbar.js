@@ -15,6 +15,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container container">
+
           <Link className="navbar-brand" to="/">StudyPlanner</Link>
           <ul className={"nav-menu"}>
             <li className={splitLocation[1] === "" ? "active" : ""}>

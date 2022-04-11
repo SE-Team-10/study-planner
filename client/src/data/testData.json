@@ -1,0 +1,72 @@
+[
+  {
+  "id": "1",
+  "name": "VOIP Project",
+  "module": "Networks",
+  "type": "Group Coursework",
+  "actualStart": "2022-02-02T00:00:00.000Z",
+  "actualEnd": "2022-07-15T00:00:00.000Z",
+  "children": [{
+    "id": "1_1",
+    "name": "Initial Implementation",
+    "actualStart": "2022-02-02T00:00:00.000Z",
+    "actualEnd": "2022-02-22T00:00:00.000Z",
+    "connectTo": "1_2",
+    "connectorType": "finish-start",
+    "progressValue": "100%"
+  },
+    {
+      "id": "1_2",
+      "name": "Group Report",
+      "actualStart": "2022-01-23T00:00:00.000Z",
+      "actualEnd": "2022-03-20T00:00:00.000Z",
+      "connectTo": "1_3",
+      "connectorType": "start-start",
+      "progressValue": "60%"
+    },
+    {
+      "id": "1_3",
+      "name": "Individual Report",
+      "actualStart": "2022-03-20T00:00:00.000Z",
+      "actualEnd": "2022-03-23T00:00:00.000Z",
+      "connectTo": "1_4",
+      "connectorType": "start-start",
+      "progressValue": "80%"
+    },
+    {
+      "id": "1_4",
+      "name": "Revision",
+      "actualStart": "2022-03-23T00:00:00.000Z",
+      "actualEnd": "2022-03-30T00:00:00.000Z",
+      "progressValue": "80%"
+    }
+
+  ]
+},
+  {
+    "id": "2",
+    "name": "Software Engineering Project",
+    "actualStart": "2022-03-02T00:00:00.000Z",
+    "actualEnd": "2022-03-28T00:00:00.000Z",
+    "module": "Software Engineering",
+    "type": "Group Coursework",
+    "children": [{
+      "id": "2_1",
+      "name": "Use cases",
+      "actualStart": "2022-03-20T00:00:00.000Z",
+      "actualEnd": "2022-04-14T00:00:00.000Z",
+      "connectTo": "1_2",
+      "connectorType": "finish-start",
+      "progressValue": "75%"
+    },
+      {
+        "id": "2_2",
+        "name": "Class diagrams",
+        "actualStart": "2022-03-06T00:00:00.000Z",
+        "actualEnd": "2022-04-28T00:00:00.000Z",
+        "connectTo": "1_2",
+        "connectorType": "finish-start",
+        "progressValue": "75%"
+      }]
+  }
+]

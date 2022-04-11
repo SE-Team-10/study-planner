@@ -5,7 +5,9 @@ import GanttChart from "./components/pages/chart";
 import AddNew from "./components/pages/addnew";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
+import Task from "./components/pages/task";
 
 class App extends React.Component {
   state = {
@@ -39,7 +41,7 @@ class App extends React.Component {
 
       <>
         <Helmet>
-          <script src="testing.js" type="text/javascript" />
+          <script src="../public/testing.js" type="text/javascript" />
         </Helmet>
         <Router>
           <p className="test">{this.state.data}</p>
@@ -48,8 +50,10 @@ class App extends React.Component {
             <Route path="/" exact component={Dashboard} />
             <Route path="/chart" exact component={GanttChart} />
             <Route path="/addnew" exact component={AddNew} />
+            <Route path={"/task/:id/:name"}><Task /></Route>
           </Switch>
         </Router>
+        <Footer/>
       </>
     );
   }

@@ -1,0 +1,22 @@
+.progress-bar-radial{
+  width: 3.5em;
+  position: relative;
+  font-size: 4em;
+  line-height: 1;
+}
+
+.percentage-text{
+  font-size: 1em;
+  color:#fff;
+  font-family: "Gilroy Bold";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .percent-symbol{
+    font-family: "Inter", sans-serif;
+    font-size: 0.6em;
+    opacity: 0.7;
+  }
+}
