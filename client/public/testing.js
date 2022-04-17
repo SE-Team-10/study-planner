@@ -75,7 +75,24 @@ function img() {
 					connectorType: "finish-start",
 					progressValue: "75%"
 				}]
+		},
+		{
+			id: "3",
+			name: "Exam 1",
+			actualStart: Date.UTC(2022, 2, 24),
+			actualEnd: Date.UTC(2022, 2, 24),
+			module: "Data Structures and Algorithms",
+			type:"Online Exam",
+			notes:"Here's some notes about this exam.",
+			children: [{
+				id: "3_1",
+				name: "Use cases",
+				actualStart: Date.UTC(2022, 2, 3),
+				actualEnd: Date.UTC(2022, 3, 13),
+				progressValue: "75%"
+			}]
 		}
+
 
 
 	];

@@ -3,6 +3,16 @@
   gap: 1em;
   grid-template-columns: 2fr 2fr;
 }
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .cardGroup{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .card{
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e7e7e7;
