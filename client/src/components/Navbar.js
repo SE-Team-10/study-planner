@@ -27,6 +27,9 @@ function Navbar() {
             <li className={splitLocation[1] === "addnew" ? "active" : ""}>
               <Link to="/addnew">Add New</Link>
             </li>
+            <li className={splitLocation[1] === "upload" ? "active" : ""}>
+              <Link to="/upload">Upload File</Link>
+            </li>
           </ul>
           <div className="navbar-account" style={{backgroundImage: `url(/profile.png)`}}>
             <div className="account-menu">

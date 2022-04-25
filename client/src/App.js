@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
 import Task from "./components/pages/task";
+import Upload from "./components/pages/upload";
 
 class App extends React.Component {
   state = {
@@ -50,6 +51,7 @@ class App extends React.Component {
             <Route path="/" exact component={Dashboard} />
             <Route path="/chart" exact component={GanttChart} />
             <Route path="/addnew" exact component={AddNew} />
+             <Route path="/upload" exact component={Upload} />
             <Route path={"/task/:id/:name"}><Task /></Route>
           </Switch>
         </Router>
