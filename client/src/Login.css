@@ -1,6 +1,7 @@
 body{
   height: 100%;
   margin: 0;
+
 }
 
 .bg {
@@ -29,7 +30,8 @@ body{
   margin: auto;
   width: 500px;
   height: 550px;
-  font-family: "Gilroy Heavy", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
   background-color: #f8f9fd;
   border-radius: 5px;
 }
@@ -78,19 +80,27 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-  font-family: "Gilroy Heavy", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
   letter-spacing: 1px;
   margin-top: 10px;
   cursor: pointer;
   font-size: 15px;
   border: 2px solid #2c57ff;
-  border-radius: 6px;
-  color: #2c57ff;
-  padding: 10px 60px;
+  border-radius: 3px;
+  background-color: #2c57ff;
+  color: #f8f9fd;
+  padding: 6px 135px;
 }
 
 input[type="submit"]:hover {
-  background-color: #dad6ff;
+  background-color: #274EE5;
+  border: 2px solid #274EE5;
+}
+
+input[type="submit"]:active {
+  background-color: #2c57ff;
+  border: 2px solid #2c57ff;
 }
 
 .button-container {
