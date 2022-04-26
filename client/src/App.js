@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
+import "./Login.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
 import AddNew from "./components/pages/addnew";
@@ -32,9 +33,9 @@ const database = [
 ];
 
 const errors = {
-  semester: "invalid semester",
-  uname: "invalid username",
-  pass: "invalid password"
+  semester: "Incorrect Semester",
+  uname: "Invalid Username",
+  pass: "Invalid Password"
 };
 
 var tempError = null;
@@ -90,43 +91,52 @@ class App extends React.Component {
       tempError = {name: "uname", message: errors.uname};
     }
     console.log(tempError.message);
+    this.forceUpdate();
   };
 
   renderErrorMessage = (name) => {
     if (tempError && name === tempError.name){
-        return(<div className="error">{tempError.message}</div>);
-    }};
+      return(<div className="error">{tempError.message}</div>);
+    } else {
+      return(<div className="hide">secret</div>);
+    }
+  };
 
   renderForm = () => {
     return (
-      <div className="form">
-        <form onSubmit={this.handleSubmit}>
-        <div className="input-container">
-          <label>Semester </label>
-          <select type="text" name="semester" required>
-            <option> Select your Semester: </option>
-            <option> Semester 1</option>
-            <option> Semester 2</option>
-            <option> Semester 3</option>
-            <option> Semester 4</option>
-          </select>
-          {this.renderErrorMessage("semester")}
+        <div className="bg">
+          <div className="logbox">
+            <p className="brand">Study Planner</p>
+            <div className="form">
+              <form onSubmit={this.handleSubmit}>
+                <div className="input-container">
+                  <label>Semester </label>
+                  <select type="text" name="semester" required>
+                    <option> Select your Semester: </option>
+                    <option> Semester 1</option>
+                    <option> Semester 2</option>
+                    <option> Semester 3</option>
+                    <option> Semester 4</option>
+                  </select>
+                  {this.renderErrorMessage("semester")}
+                </div>
+                <div className="input-container">
+                  <label>Username </label>
+                  <input type="text" name="uname" required />
+                  {this.renderErrorMessage("uname")}
+                </div>
+                <div className="input-container">
+                  <label>Password </label>
+                  <input type="password" name="pass" required />
+                  {this.renderErrorMessage("pass")}
+                </div>
+                <div className="button-container">
+                  <input type="submit" />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-          <div className="input-container">
-            <label>Username </label>
-            <input type="text" name="uname" required />
-            {this.renderErrorMessage("uname")}
-          </div>
-          <div className="input-container">
-            <label>Password </label>
-            <input type="password" name="pass" required />
-            {this.renderErrorMessage("pass")}
-          </div>
-          <div className="button-container">
-            <input type="submit" />
-          </div>
-        </form>
-      </div>
   )};
 
   home = () => {
@@ -152,9 +162,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <body>
         {this.state.isSubmitted ? this.home() : this.renderForm()}
-      </div>
+      </body>
   );}
 }
 
@@ -162,16 +172,3 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 
 export default App;
-/*
-app.get("/login/:user", (req, res) => {
-  currentUser = req.params.user;
-  console.log(currentUser+" is logged in");
-  res.sendStatus(200);
-});
-
-app.get("/getUser", (req, res) => {
-  res.send(currentUser);
-});
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
-*/
