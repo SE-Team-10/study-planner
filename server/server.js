@@ -2,11 +2,11 @@ const express = require("express");
 let busboy = require('connect-busboy');
 var path = require('path');
 const fs = require('fs');
-const app = express(); 
+const app = express();
 const port = 5000;
 
 
-app.listen(port, () => console.log(`Listening on port ${port}`)); 
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -17,14 +17,14 @@ app.use(busboy());
 
 //send message from api to react app (client) that express is connected
 app.get("/api", (req, res) => {
-  res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" }); 
-}); 
+  res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
+});
 
 app.post('/api-upload', (req, res) => {
  req.busboy.on('file', function (fieldname, file, filename) {
-   console.log("received file")
-   console.log(fieldname)
-   console.log(filename)
+   console.log("received file");
+   console.log(fieldname);
+   console.log(filename);
    var fstream = fs.createWriteStream('./userData/' + filename.filename);
    file.pipe(fstream);
    fstream.on('close', function () {
