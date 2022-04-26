@@ -12,8 +12,6 @@ import {Helmet} from "react-helmet";
 import Task from "./components/pages/task";
 import Upload from "./components/pages/upload";
 
-var currentUser = null;
-
 const database = [
   {
     "userName": "Bob",
@@ -47,6 +45,7 @@ class App extends React.Component {
     this.state = {
       data: null,
       isSubmitted: false,
+      currentUser: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -83,8 +82,8 @@ class App extends React.Component {
       } else if (userData.Semester !== semester.value) {
         tempError = {name: "semester", message: errors.semester};
       } else {
-        currentUser = userData.userName;
-        this.setState({isSubmitted: true})
+        this.setState({currentUser: userData.userName});
+        this.setState({isSubmitted: true});
       }
     } else {
       // Username not found
@@ -140,6 +139,7 @@ class App extends React.Component {
   )};
 
   home = () => {
+    const {currentUser} = this.state.currentUser;
     return (
       <>
         <Helmet>
