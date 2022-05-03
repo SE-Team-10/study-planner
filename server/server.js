@@ -17,6 +17,11 @@ let data = require('./userData/admin.json')
 
 app.listen(port, () => console.log(`Listening on port ${port}`)); 
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use(busboy());
 
 //send message from api to react app (client) that express is connected
