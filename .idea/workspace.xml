@@ -5,45 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="- Changes to Dashboard">
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/note.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/overview.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/tasks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/withData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/note.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/var.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/testing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/testing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DeadlineCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DeadlineCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DeadlineCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/RadialProgress.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/RadialProgress.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/RadialProgress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SemesterProgress.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SemesterProgress.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SemesterProgress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/SemesterProgress.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SubTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SubTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/data/testData.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/data/testData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +100,7 @@
       <workItem from="1651414129931" duration="3183000" />
       <workItem from="1651428083076" duration="53060000" />
       <workItem from="1651542695611" duration="4253000" />
+      <workItem from="1651547167350" duration="585000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
