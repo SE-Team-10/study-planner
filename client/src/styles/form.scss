@@ -1,0 +1,32 @@
+@use 'var';
+
+button{
+  background-color: var.$brand-color-1;
+  font-family: inherit;
+  border: none;
+  border-radius: 3px;
+  color: var.$bg1;
+  padding: 0.5em 1em;
+}
+
+button:hover{
+  filter: brightness(1.1);
+}
+button:active{
+  filter: brightness(0.9);
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+[contenteditable]:empty::before {
+  content: attr(data-placeholder);
+  opacity: 0.8;
+  cursor: text;
+}
+[contenteditable]:empty:focus::before {
+  content: attr(data-focused-advice);
+  opacity: 0.8;
+  cursor: text;
+}

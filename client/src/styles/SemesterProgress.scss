@@ -1,11 +1,13 @@
+@use 'var';
+
 .progressBar{
   height: 2em;
   width: 100%;
-  background-color: #e7e7e7;
+  background-color: var.$bg3;
   border-radius: 50px;
   .fill{
     height: 100%;
-    background: linear-gradient(to right, #6b2cff, #2c57ff);
+    background: linear-gradient(to right, var.$brand-color-2, var.$brand-color-1);
     text-align: right;
     border-radius: inherit;
     width: 0%;

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link, useLocation } from "react-router-dom";
 import ReactDom from "react-dom";
-import "./Modal.scss";
+import "../styles/Modal.scss";
 
 function Modal(props) {
     const [open, onClose] = React.useState();

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Footer.scss";
+import "../styles/Footer.scss";
 
 function Footer() {
 

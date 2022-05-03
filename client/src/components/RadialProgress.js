@@ -1,5 +1,6 @@
 import React from "react";
-import "./RadialProgress.scss"
+import "../styles/RadialProgress.scss"
+import variables from '../styles/var.scss';
 
 const cleanPercentage = (percentage) => {
     const tooLow = !Number.isFinite(+percentage) || percentage < 0;
@@ -18,7 +19,7 @@ const Circle = ({ colour, pct }) => {
             cy={100}
             fill="transparent"
             stroke={strokePct !== circ ? colour : ""} // remove colour as 0% sets full circumference
-            strokeWidth={"1rem"}
+            strokeWidth={"0.5rem"}
             strokeDasharray={circ}
             strokeDashoffset={pct ? strokePct : 0}
             strokeLinecap="round"
@@ -48,7 +49,7 @@ const RadialProgress = ({ percentage, colour }) => {
             <svg width="100%" viewBox="0 0 200 200">
                 <g transform={`rotate(-90 ${"100 100"})`}>
                     <Circle colour="rgba(255,255,255,0.1)" />
-                    <Circle colour="rgba(255,255,255,0.8)" pct={pct} />
+                    <Circle colour={variables.primaryColor} pct={pct} />
                 </g>
             </svg>
             <span className="percentage-text">{pct}<span className="percent-symbol">%</span></span>
