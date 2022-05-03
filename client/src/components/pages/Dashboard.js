@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, Component} from "react";
 import "../../App.css";
 import SemesterProgress from "../SemesterProgress";
 import DeadlineCard from "../DeadlineCard";
@@ -6,9 +6,13 @@ import Modal from "../Modal";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import {Helmet} from "react-helmet";
 import Task from "./task";
+import withData from "../withData";
+import Assignment from "./Assignment/assignment";
 
 
-let testData = img()
+let testData = []
+
+
 
 
 var tasks = testData;
@@ -85,48 +89,49 @@ var semesterProgress = (count/tasks.length)*100;
 
 semesterProgress = Math.round(semesterProgress);
 
-function Dashboard() {
-    const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="container">
-      <h2>Semester Progress</h2>
-      <SemesterProgress bgcolor={"#2c57ff"} completed={semesterProgress}/>
-      <h2>Upcoming Deadlines</h2>
-      <div className="cardGroup">
-          <Router>
-              {upcomingDeadlines.map((item, idx) => (
-                  <>
-                      <Link to={"/task/"+item.id+"/"+item.name}>
-                      <div>
-                          <DeadlineCard key={idx} txcolor={item.color} name={item.name} completed={item.progressValue} module={item.module} type={item.type} actualEnd={item.actualEnd}/>
-                      </div>
-                      </Link>
-                  </>
-              )).flat()}
-              <Route path={"/task/:id/:name"}><Task /></Route>
-          </Router>
+class Dashboard extends Component{
+    constructor() {
+        super();
+        this.state = {
+            moduleEvents:[]
+        }
+    }
 
-      </div>
+    componentDidMount(){
+        fetch('/api/module-events')
+            .then(r => r.json())
+            .then(moduleEvents => this.setState({moduleEvents}))
 
-        <h2>Past Deadlines</h2>
-        <div className="cardGroup">
-            {pastDeadlines.map((item, idx) => (
-                <DeadlineCard key={idx} txcolor={item.color} name={item.name} completed={item.progressValue} module={item.module} type={item.type} actualEnd={item.actualEnd}/>
-            )).flat()}
-        </div>
 
-        <h2>Completed Deadlines</h2>
-        <div className="cardGroup">
-            {completedDeadlines.map((item, idx) => (
-                <DeadlineCard key={idx} txcolor={item.color} name={item.name} completed={item.progressValue} module={item.module} type={item.type} actualEnd={item.actualEnd}/>
-            )).flat()}
-        </div>
+    }
 
 
 
-      
-    </div>
-  );
+    render(){
+        return (
+            <div className="container">
+                <h1></h1>
+                <h2>Semester Progress</h2>
+                <SemesterProgress bgcolor={"#2c57ff"} completed={semesterProgress}/>
+                <h2>Upcoming Deadlines</h2>
+
+                <h3>JSON Link</h3>
+                <div className="cardGroup">
+                    {/*<Router>*/}
+                    {console.log(this.state.moduleEvents)}
+                        {this.state.moduleEvents.map((moduleEvent, idx) => (
+                            <Link to={"/assignment/"+moduleEvent.id}>
+                                <DeadlineCard key={idx} name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.progressValue} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
+                            </Link>
+                        )).flat()}
+
+                    {/*    <Route path={"/assignment/:id/"} component={Assignment}/>*/}
+                    {/*</Router>*/}
+                </div>
+            </div>
+        );
+    }
+
 }
 
 export default Dashboard;

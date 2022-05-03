@@ -1,0 +1,40 @@
+
+////Colors
+//$brand-color-1: rgb(0,122,255);
+//$brand-color-2: #6b2cff;
+//
+//$bg1: #fff;
+//$bg2: #f8f8f8;
+//$bg3: #e7e7e7;
+//
+//$text-color: #333;
+//$text-color-2: #aaa;
+//
+//$border: #e7e7e7;
+
+
+//Dark Mode
+$brand-color-1: rgb(10,132,255);
+$brand-color-2: #6b2cff;
+$bg1: #1f1f1f;
+$bg2: #181818;
+$bg3: #101010;
+
+$text-color: #f3f3f3;
+$text-color-2: #aaa;
+
+$border: #2c2c2c;
+
+
+//Fonts
+$header-font: "Gilroy Bold", "Inter", sans-serif;
+$body-font: "Inter", sans-serif;
+$brand-font: "Gilroy Heavy","Inter", sans-serif;
+
+//Responsive Sizes
+$mobile-width: 620px;
+
+
+:export {
+  primaryColor: $brand-color-1;
+}

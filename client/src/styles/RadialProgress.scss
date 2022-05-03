@@ -1,3 +1,5 @@
+@use 'var';
+
 .progress-bar-radial{
   width: 3.5em;
   position: relative;
@@ -7,7 +9,7 @@
 
 .percentage-text{
   font-size: 1em;
-  color:#fff;
+  color: var.$brand-color-1;
   font-family: "Gilroy Bold";
 
   position: absolute;
@@ -17,6 +19,6 @@
   .percent-symbol{
     font-family: "Inter", sans-serif;
     font-size: 0.6em;
-    opacity: 0.7;
+    color: var.$text-color-2;
   }
 }

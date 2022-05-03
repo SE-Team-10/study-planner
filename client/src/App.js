@@ -9,33 +9,24 @@ import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
 import Task from "./components/pages/task";
 import Upload from "./components/pages/upload";
+import "./styles/form.scss"
+import Assignment from "./components/pages/Assignment/assignment";
 
 class App extends React.Component {
-  state = {
-    data: null,
-  };
-
-  componentDidMount() {
-    this.callBackendAPI()
-      .then((res) => this.setState({ data: res.express }))
-      .catch((err) => console.log(err));
-  }
-
-
-
-
-  // fetching the GET route from the Express server which matches the GET route from server.js
-  callBackendAPI = async () => {
-    const response = await fetch("/api");
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message);
+    constructor(props) {
+        super(props);
+        this.state = { apiResponse: "" };
     }
-    return body;
-  };
 
-
+    // callAPI() {
+    //     fetch("/api/test")
+    //         .then(res => res.text())
+    //         .then(res => this.setState({ apiResponse: res }));
+    // }
+    //
+    // componentDidMount() {
+    //     this.callAPI();
+    // }
 
   render() {
     return (
@@ -45,14 +36,14 @@ class App extends React.Component {
           <script src="../public/testing.js" type="text/javascript" />
         </Helmet>
         <Router>
-          <p className="test">{this.state.data}</p>
+          <p className="test">{this.state.apiResponse}</p>
           <Navbar />
           <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/chart" exact component={GanttChart} />
             <Route path="/addnew" exact component={AddNew} />
-             <Route path="/upload" exact component={Upload} />
-            <Route path={"/task/:id/:name"}><Task /></Route>
+              <Route path="/upload" exact component={Upload} />
+            <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
           </Switch>
         </Router>
         <Footer/>
