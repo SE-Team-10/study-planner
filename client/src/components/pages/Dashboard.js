@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import {Helmet} from "react-helmet";
 import Task from "./task";
 
+//Convert function to class and add constructor to view currentUser, see upload.js for reference
 
 let testData = img()
 
@@ -124,7 +125,7 @@ function Dashboard() {
 
 
 
-      
+
     </div>
   );
 }

@@ -45,7 +45,7 @@ class App extends React.Component {
     this.state = {
       data: null,
       isSubmitted: false,
-      currentUser: null
+      currentUser: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,6 +75,7 @@ class App extends React.Component {
     var { semester, uname, pass } = document.forms[0];
     // Find user login info
     const userData = database.find((user) => user.userName === uname.value);
+    console.log(userData.userName);
     // Compare user info
     if (userData) {
       if(userData.PassWord !== pass.value){
@@ -89,7 +90,9 @@ class App extends React.Component {
       // Username not found
       tempError = {name: "uname", message: errors.uname};
     }
-    console.log(tempError.message);
+    if(tempError){
+      console.log(tempError.message);
+    }
     this.forceUpdate();
   };
 
@@ -138,8 +141,8 @@ class App extends React.Component {
         </div>
   )};
 
-  home = () => {
-    const {currentUser} = this.state.currentUser;
+  home = (user) => {
+    console.log("currentUser: "+user);
     return (
       <>
         <Helmet>
@@ -147,7 +150,7 @@ class App extends React.Component {
         </Helmet>
         <Router>
           <p className="test">{this.state.data}</p>
-          <Navbar />
+          <Navbar sentUser = {user}/>
           <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/chart" exact component={GanttChart} />
@@ -163,7 +166,7 @@ class App extends React.Component {
   render() {
     return (
       <body>
-        {this.state.isSubmitted ? this.home() : this.renderForm()}
+        {this.state.isSubmitted ? this.home(this.state.currentUser) : this.renderForm()}
       </body>
   );}
 }

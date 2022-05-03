@@ -6,7 +6,7 @@ import ReactDom from "react-dom";
 import SubTask from "../SubTask";
 import RadialProgress from "../RadialProgress";
 
-
+//Convert function to class and add constructor to view currentUser, see upload.js for reference
 
 function Task(props) {
 

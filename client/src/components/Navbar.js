@@ -1,49 +1,62 @@
-import React from "react";
+import React,{Component} from 'react';
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
-function Navbar() {
-  const location = useLocation();
+class Navbar extends Component {
 
-  //destructuring pathname from location
-  const { pathname } = location;
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: this.props.sentUser,
+    };
+    console.log("Navbar user: "+this.state.currentUser);
+  }
 
-  //Javascript split method to get the name of the path in array
-  const splitLocation = pathname.split("/");
+  //static location = useLocation();
 
-  return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-container container">
+  //getLocation = () => {
+    //const { pathname } = this.location;
+    //const splitLocation = pathname.split("/");
+    //console.log(splitLocation[1]);
+    //return(splitLocation[1]);
+  //}
 
-          <Link className="navbar-brand" to="/">StudyPlanner</Link>
-          <ul className={"nav-menu"}>
-            <li className={splitLocation[1] === "" ? "active" : ""}>
-              <Link to="/">Dashboard</Link>
-            </li>
-            <li className={splitLocation[1] === "chart" ? "active" : ""}>
-              <Link to="/chart">Gantt Chart</Link>
-            </li>
-            <li className={splitLocation[1] === "addnew" ? "active" : ""}>
-              <Link to="/addnew">Add New</Link>
-            </li>
-            <li className={splitLocation[1] === "upload" ? "active" : ""}>
-              <Link to="/upload">Upload File</Link>
-            </li>
-          </ul>
-          <div className="navbar-account" style={{backgroundImage: `url(/profile.png)`}}>
-            <div className="account-menu">
-            <ul>
-                <li><Link to="#">Settings</Link></li>
-                <li><Link to="#">Log out</Link></li>
+  // className={this.getLocation() === "" ? "active" : ""}
+
+  render() {
+    return (
+      <>
+        <nav className="navbar">
+          <div className="navbar-container container">
+
+            <Link className="navbar-brand" to="/">StudyPlanner</Link>
+            <ul className={"nav-menu"}>
+              <li>
+                <Link to={{pathname: "/", state: {sentUser: this.state.currentUser},}}>Dashboard</Link>
+              </li>
+              <li>
+                <Link to={{pathname: "/chart", state: {sentUser: this.state.currentUser},}}>Gantt Chart</Link>
+              </li>
+              <li>
+                <Link to={{pathname: "/addnew", state: {sentUser: this.state.currentUser},}}>Add New</Link>
+              </li>
+              <li>
+                <Link to={{pathname: "/upload", state: {sentUser: this.state.currentUser},}}>Upload File</Link>
+              </li>
             </ul>
+            <div className="navbar-account" style={{backgroundImage: `url(/profile.png)`}}>
+              <div className="account-menu">
+              <p>{this.state.currentUser}</p>
+              <ul>
+                  <li><Link to="#">Settings</Link></li>
+                  <li><Link to="#">Log out</Link></li>
+              </ul>
+              </div>
             </div>
           </div>
-
-        </div>
-      </nav>
-    </>
-  );
+        </nav>
+      </>
+  )};
 }
 
 export default Navbar;
