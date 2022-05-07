@@ -4,24 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="error fixed">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/study-planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/study-planner.iml" afterDir="false" />
+    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="Dashboard: Filter deadlines by dropdown&#10;Server: Filter deadlines api, tidied notes CRUD">
+      <change afterPath="$PROJECT_DIR$/client/src/components/ModuleCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Module/Notes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Module/module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Module/note.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Module/overview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Module/tasks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/ModuleCard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/testing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/testing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/DeadlineCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DeadlineCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/note.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/note.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/addnew.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/addnew.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/pages/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/task.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/pages/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/upload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/var.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
@@ -64,7 +66,7 @@
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/eddie/Documents/study-planner/client/src/components/pages/Assignment",
+    "last_opened_file_path": "/home/eddie/Documents/study-planner/client/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,10 +78,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/components/pages/Assignment" />
+      <recent name="$PROJECT_DIR$/client/src/components" />
       <recent name="$PROJECT_DIR$/client/src/styles" />
       <recent name="$PROJECT_DIR$/client/src/components/pages" />
-      <recent name="$PROJECT_DIR$/client/src/components" />
+      <recent name="$PROJECT_DIR$/client/src/components/pages/Assignment" />
       <recent name="$PROJECT_DIR$/client/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -122,7 +124,7 @@
       <workItem from="1651547167350" duration="11537000" />
       <workItem from="1651762685754" duration="66000" />
       <workItem from="1651762810908" duration="1485000" />
-      <workItem from="1651928925126" duration="16248000" />
+      <workItem from="1651928925126" duration="24154000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
@@ -173,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651547793330</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Dashboard: Filter deadlines by dropdown&#10;Server: Filter deadlines api, tidied notes CRUD">
+      <created>1651950465136</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651950465136</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +207,7 @@
     <MESSAGE value="- Fixed account settings placement&#10;- Semester progress on DB calculates all completed tasks&#10;- Date goes red if a deadline is due in less than 5 days" />
     <MESSAGE value="- Changes to Dashboard" />
     <MESSAGE value="error fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="error fixed" />
+    <MESSAGE value="Dashboard: Filter deadlines by dropdown&#10;Server: Filter deadlines api, tidied notes CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard: Filter deadlines by dropdown&#10;Server: Filter deadlines api, tidied notes CRUD" />
   </component>
 </project>

@@ -84,17 +84,25 @@ app.get("/api/modules", (req, res) =>{
   res.send(data.modules);
 })
 
-app.get("/api/module/:id", (req,res)=>{
-  const {id} = req.params;
+app.get("/api/module/:name", (req,res)=>{
+    const {name} = req.params;
 
-  const foundModule = data.modules.find((module) => module.id === id);
+    const moduleIndex = data.modules.findIndex((module) => module.name === name)
 
-  res.send(foundModule)
+    res.send(data.modules[moduleIndex]);
 })
 
 app.get("/api/module-events", (req, res) =>{
   res.header("Content-Type",'application/json');
   res.send(data.moduleEvents);
+})
+
+app.get("/api/module-events/module=:moduleName", (req, res) =>{
+    res.header("Content-Type",'application/json');
+    const {moduleName} = req.params;
+
+
+    res.send(data.moduleEvents.filter((mE)=>mE.moduleName === moduleName));
 })
 
 app.get("/api/module-events/upcoming", (req, res) =>{
@@ -213,7 +221,7 @@ app.post("/api/module-event/:meID/note/", (req,res) => {
 
     data.moduleEvents[moduleEventIndex].notes.push(test);
 
-    data.moduleEvents[moduleEventIndex].totalNotes += 1;
+    // data.moduleEvents[moduleEventIndex].totalNotes += 1;
     //
     res.json(data.moduleEvents[moduleEventIndex].notes);
 })

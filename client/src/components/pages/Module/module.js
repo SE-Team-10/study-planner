@@ -10,38 +10,38 @@ import DeadlineCard from "../../DeadlineCard";
 import Notes from "./Notes";
 
 
-class Assignment extends Component {
+class Module extends Component {
     constructor() {
         const parser = new DOMParser();
         super();
         this.state = {
-            assignment: "",
+            module: "",
             isLoading: true,
-            notesArr:[]
+            moduleEvents:[]
         };
     }
 
-    getAssignment(){
-        const apiLink = "/api/module-event/"+this.props.match.params.id;
+    getAssignments(){
+        fetch('/api/module-events/module='+this.props.match.params.name)
+            .then(r => r.json())
+            .then(moduleEvents => this.setState({moduleEvents}))
+    }
 
-        function calcTotalTasks(assignment) {
-
-        }
-
+    getModule(){
+        const apiLink = "/api/module/"+this.props.match.params.name;
 
         fetch(apiLink)
             .then(r => r.json())
-            .then(assignment =>
+            .then(module =>
                 this.setState({
-                    assignment:assignment,
-                    isLoading:false,
-                    notesArr:assignment.notes,
+                    module:module,
                 })
             )
     }
 
     componentDidMount(){
-        this.getAssignment();
+        this.getModule();
+        this.getAssignments()
         document.body.classList.add("active-modal");
 
     }
@@ -50,11 +50,6 @@ class Assignment extends Component {
         document.body.classList.remove("active-modal");
     }
 
-    getTasks(){
-        let assignmentTasks = [];
-        assignmentTasks = this.state.assignment;
-        return assignmentTasks;
-    }
 
     render(){
         return  ReactDom.createPortal(
@@ -67,30 +62,32 @@ class Assignment extends Component {
                                     <span className="close-text">Close</span>
                                     <span className="material-icons md-24 close-button">close</span>
                                 </Link>
-                                <ol className="breadcrumbs">
-                                    <li><Link to={"/module/"+this.state.assignment.moduleName}>{this.state.assignment.moduleName}</Link></li>
-                                    <li><Link to="/">{this.state.assignment.name}</Link></li>
-                                </ol>
+
                             </div>
-                            <h1>{this.state.assignment.name}</h1>
+                            <h1>{this.state.module.name}</h1>
 
                         </div>
 
                             <Tabs>
                                     <TabList className="tabs">
-                                        <Tab key={1}><a>Overview</a></Tab>
-                                        <Tab key={2}><a>Notes</a></Tab>
-                                        <Tab key={3}><a>Tasks</a></Tab>
+                                        <Tab key={1}><a>Assignments</a></Tab>
+                                        <Tab key={2}><a>Info</a></Tab>
                                     </TabList>
 
                                 <div className="content">
-                                <TabPanel key={1}><Overview info={this.state.assignment.moduleEventOverview} actualStart={this.state.assignment.actualStart} actualEnd={this.state.assignment.actualEnd} tasksCompleted={this.state.assignment.tasksCompleted} totalTasks={this.state.assignment.totalTasks} totalNotes={this.state.assignment.totalNotes} progressValue={parseInt(this.state.assignment.totalProgressValue)}/></TabPanel>
-                                <TabPanel key={2}>
-                                    <Notes assignmentID={this.state.assignment.id}/>
+                                <TabPanel key={1}>
+                                    <div className="cardList">
+                                        {this.state.moduleEvents.map((moduleEvent, idx) => (
+                                            <Link to={"/assignment/"+moduleEvent.id}>
 
-
+                                                <DeadlineCard key={idx} name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
+                                            </Link>
+                                        )).flat()}
+                                    </div>
                                 </TabPanel>
-                                <TabPanel key={3}>And tasks would be here</TabPanel>
+                                <TabPanel key={2}>
+                                    {this.state.module.moduleOverview}
+                                </TabPanel>
                                 </div>
                             </Tabs>
                     </div>
@@ -108,4 +105,4 @@ class Assignment extends Component {
 
 
 
-export default withRouter(Assignment);
+export default withRouter(Module);

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/DeadlineCard.scss";
+import "../styles/ModuleCard.scss";
 
 
 const DeadlineCard = (props) => {

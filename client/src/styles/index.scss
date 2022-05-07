@@ -43,6 +43,10 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     height: 90vh;
 }
 
+.main-content{
+  min-height: 85vh;
+}
+
 hr{
     border-top: 1px solid var.$border;
 }
@@ -140,3 +144,4 @@ a {
 .tabs li:last-of-type::after {
   display: none;
 }
+

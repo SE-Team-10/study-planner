@@ -1,5 +1,4 @@
 import React, {useState, Component} from "react";
-import "../../App.css";
 import SemesterProgress from "../SemesterProgress";
 import DeadlineCard from "../DeadlineCard";
 import Modal from "../Modal";
@@ -8,6 +7,7 @@ import {Helmet} from "react-helmet";
 import Task from "./task";
 import withData from "../withData";
 import Assignment from "./Assignment/assignment";
+import ModuleCard from "../ModuleCard";
 
 // var upcomingDeadlines=[];
 // var pastDeadlines=[];
@@ -66,7 +66,8 @@ class Dashboard extends Component{
         super();
         this.state = {
             moduleEvents:[],
-            semesterInfo:[]
+            semesterInfo:[],
+            modules:[]
         }
     }
 
@@ -77,6 +78,9 @@ class Dashboard extends Component{
         fetch('/api/semester-details')
             .then(r => r.json())
             .then(semesterInfo => this.setState({semesterInfo}))
+        fetch('/api/modules')
+            .then(r => r.json())
+            .then(modules => this.setState({modules}))
     }
 
     filterModules(selectedFilter){
@@ -92,7 +96,16 @@ class Dashboard extends Component{
             <div className="container">
                 <h1>{this.state.semesterInfo.semesterName} Progress</h1>
                 <SemesterProgress bgcolor={"#2c57ff"} completed={this.state.semesterInfo.totalSemesterProgress}/>
-                <p>Gonna put modules here</p>
+                <h2>Modules</h2>
+                <div className="module-cards">
+                    {this.state.modules.map((module, idx) => (
+                        <Link to={"/module/"+module.name}>
+
+                            <ModuleCard key={idx} name={module.name} code={module.code}/>
+                        </Link>
+                    )).flat()}
+                </div>
+
                 <h2>Deadlines</h2>
                 <select name="filter" id="filter" onChange={(e) =>{
                     this.filterModules(e.target.value)
@@ -103,17 +116,14 @@ class Dashboard extends Component{
                     <option value="uncompleted">Uncompleted</option>
                 </select>
                 <div className="cardGroup">
-                    {/*<Router>*/}
                         {this.state.moduleEvents.map((moduleEvent, idx) => (
                             <Link to={"/assignment/"+moduleEvent.id}>
 
                                 <DeadlineCard key={idx} name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
                             </Link>
                         )).flat()}
-
-                    {/*    <Route path={"/assignment/:id/"} component={Assignment}/>*/}
-                    {/*</Router>*/}
                 </div>
+
             </div>
         );
     }

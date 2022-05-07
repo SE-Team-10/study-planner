@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
 import AddNew from "./components/pages/addnew";
@@ -11,6 +10,7 @@ import Task from "./components/pages/task";
 import Upload from "./components/pages/upload";
 import "./styles/form.scss"
 import Assignment from "./components/pages/Assignment/assignment";
+import Module from "./components/pages/Module/module";
 
 class App extends React.Component {
     constructor(props) {
@@ -18,33 +18,24 @@ class App extends React.Component {
         this.state = { apiResponse: "" };
     }
 
-    // callAPI() {
-    //     fetch("/api/test")
-    //         .then(res => res.text())
-    //         .then(res => this.setState({ apiResponse: res }));
-    // }
-    //
-    // componentDidMount() {
-    //     this.callAPI();
-    // }
 
   render() {
     return (
 
       <>
-        {/*<Helmet>*/}
-        {/*  <script src="../public/testing.js" type="text/javascript" />*/}
-        {/*</Helmet>*/}
         <Router>
           <p className="test">{this.state.apiResponse}</p>
           <Navbar />
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/chart" exact component={GanttChart} />
-            <Route path="/addnew" exact component={AddNew} />
-              <Route path="/upload" exact component={Upload} />
-            <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
-          </Switch>
+            <div className="main-content">
+              <Switch>
+                  <Route path="/" exact component={Dashboard} />
+                  <Route path="/chart" exact component={GanttChart} />
+                  <Route path="/addnew" exact component={AddNew} />
+                  <Route path="/upload" exact component={Upload} />
+                  <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
+                  <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
+              </Switch>
+            </div>
         </Router>
         <Footer/>
       </>

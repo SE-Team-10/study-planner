@@ -1,5 +1,4 @@
 import React,{useState, Component} from 'react';
-import "../../App.css";
 import Helmet from "react-helmet";
 
 class GanttChart extends Component {

@@ -1,4 +1,3 @@
-import "../../App.css";
 import axios from 'axios';
 import React,{Component} from 'react';
 import fileDownload from 'js-file-download';
