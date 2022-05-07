@@ -32,9 +32,9 @@ class App extends React.Component {
     return (
 
       <>
-        <Helmet>
-          <script src="../public/testing.js" type="text/javascript" />
-        </Helmet>
+        {/*<Helmet>*/}
+        {/*  <script src="../public/testing.js" type="text/javascript" />*/}
+        {/*</Helmet>*/}
         <Router>
           <p className="test">{this.state.apiResponse}</p>
           <Navbar />

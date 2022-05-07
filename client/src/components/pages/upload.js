@@ -69,7 +69,7 @@ class Upload extends Component {
       return (
         <div>
           <br />
-          <h4>Choose file before pressing the uploading</h4>
+          <p>Choose file before pressing the uploading</p>
         </div>
       );
     }
@@ -79,7 +79,7 @@ class Upload extends Component {
     return (
       <div className="container">
           <h1>Planner File Upload</h1>
-          <h3>Please upload json file provided by HUB or newer</h3>
+          <p>Please upload json file provided by HUB or newer</p>
           <div>
               <input type="file" onChange={this.onFileChange} accept=".json"/>
               <button onClick={this.onFileUpload}>Upload!</button>

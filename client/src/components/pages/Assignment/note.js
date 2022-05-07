@@ -9,7 +9,6 @@ function Note({text, noteID, assignmentID, dateCreated}) {
     }
 
     const updateNote = () => {
-        console.log(noteText)
 
         fetch(apiLink, {
             method:'PUT',
@@ -17,9 +16,6 @@ function Note({text, noteID, assignmentID, dateCreated}) {
             body:JSON.stringify({ id: noteID, text:noteText, dateCreated:dateCreated })
         })
             .then(r => r.json())
-            .then(r =>
-                console.log(r)
-            )
 
     }
 
@@ -27,9 +23,6 @@ function Note({text, noteID, assignmentID, dateCreated}) {
     const deleteNote = () => {
         fetch(apiLink, {method:'DELETE'})
             .then(r => r.json())
-            .then(r =>
-                console.log(r)
-            )
     }
 
 
@@ -42,7 +35,7 @@ function Note({text, noteID, assignmentID, dateCreated}) {
                             <span className="material-icons md-24 control-item" onClick={deleteNote}>delete_forever</span>
                         </div>
                     </div>
-                    <div spellcheck="false" data-placeholder="Click to edit note" onInput={changeNote} onBlur={updateNote} className="editable-text" contentEditable="true">{text}</div>
+                    <div spellCheck="false" data-placeholder="Click to edit note" onInput={changeNote} onBlur={updateNote} className="editable-text" suppressContentEditableWarning={true} contentEditable="true">{text}</div>
                 </div>
             </>
 

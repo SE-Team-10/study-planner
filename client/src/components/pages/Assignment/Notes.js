@@ -17,16 +17,13 @@ function Notes({assignmentID}) {
     const addNote = () => {
         fetch(apiLink+'/note', {method:'POST'})
             .then(r => r.json())
-            .then(r =>
-                console.log(r)
-            )
     }
 
 
 
     return (
         <>
-            <button onClick={addNote}>Add New</button>
+            <button onClick={addNote}><span className="material-icons">add</span> Note</button>
         {notesArray.reverse().map((note, idx) => (
                 <Note key={idx} text={note.text} noteID={note.id} assignmentID={assignmentID} dateCreated={note.dateCreated}/>
             ))}

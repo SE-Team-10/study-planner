@@ -13,7 +13,8 @@ app.use(cors());
 
 app.use(bodyParser.json())
 
-let data = require('./userData/admin.json')
+let data = require('./userData/admin.json');
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`)); 
 
@@ -24,11 +25,57 @@ app.use((req, res, next) => {
 
 app.use(busboy());
 
+dynamicData = (data) => {
+    data.totalSemesterProgress = 0;
+
+    for (let i in data.moduleEvents) {
+        if (data.moduleEvents[i].hasOwnProperty('tasks')) {
+            data.moduleEvents[i].totalTasks = data.moduleEvents[i].tasks.length;
+            let count = 0;
+            for (let x in data.moduleEvents[i].tasks) {
+                data.moduleEvents[i].totalProgressValue = 0;
+                for (let m in data.moduleEvents[i].tasks) {
+                    data.moduleEvents[i].totalProgressValue += parseInt(data.moduleEvents[i].tasks[m].progressValue);
+                }
+                data.moduleEvents[i].totalProgressValue = data.moduleEvents[i].totalProgressValue / data.moduleEvents[i].tasks.length;
+                if (data.moduleEvents[i].tasks[x].progressValue === "100%") {
+                    count = count + 1;
+                }
+                data.moduleEvents[i].tasksCompleted = count;
+            }
+
+        } else {
+            data.moduleEvents[i].totalTasks = 0;
+            data.moduleEvents[i].tasksCompleted = 0;
+            data.moduleEvents[i].totalProgressValue = 0;
+        }
+
+        if (data.moduleEvents[i].hasOwnProperty('notes')) {
+            data.moduleEvents[i].totalNotes = data.moduleEvents[i].notes.length;
+        } else {
+            data.moduleEvents[i].totalNotes = 0;
+        }
+
+        data.totalSemesterProgress += data.moduleEvents[i].totalProgressValue;
+    }
+    data.totalSemesterProgress = data.totalSemesterProgress / data.moduleEvents.length;
+    return data;
+}
+
+data = dynamicData(data);
+
 //send message from api to react app (client) that express is connected
 app.get("/api", (req, res) => {
   //res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
   res.header("Content-Type",'application/json');
   res.send(data);
+});
+
+app.get("/api/semester-details", (req, res) => {
+    //res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
+    res.header("Content-Type",'application/json');
+
+    res.send({semesterName:data.semesterName, totalSemesterProgress:data.totalSemesterProgress});
 });
 
 
@@ -40,7 +87,7 @@ app.get("/api/modules", (req, res) =>{
 app.get("/api/module/:id", (req,res)=>{
   const {id} = req.params;
 
-  const foundModule = data.modules.find((module) => module.id == id);
+  const foundModule = data.modules.find((module) => module.id === id);
 
   res.send(foundModule)
 })
@@ -50,13 +97,42 @@ app.get("/api/module-events", (req, res) =>{
   res.send(data.moduleEvents);
 })
 
+app.get("/api/module-events/upcoming", (req, res) =>{
+    res.header("Content-Type",'application/json');
+
+    const currentTime = new Date(Date.now());
+
+    const jsonDate = currentTime.toJSON();
+
+    res.send(data.moduleEvents.filter((mE)=>mE.actualEnd >= jsonDate));
+})
+
+app.get("/api/module-events/past", (req, res) =>{
+    res.header("Content-Type",'application/json');
+    const currentTime = new Date(Date.now());
+
+    const jsonDate = currentTime.toJSON();
+
+    res.send(data.moduleEvents.filter((mE)=>mE.actualEnd <= jsonDate));
+})
+
+app.get("/api/module-events/completed", (req, res) =>{
+    res.header("Content-Type",'application/json');
+    res.send(data.moduleEvents.filter((mE)=>mE.totalProgressValue === 100));
+})
+
+app.get("/api/module-events/uncompleted", (req, res) =>{
+    res.header("Content-Type",'application/json');
+    res.send(data.moduleEvents.filter((mE)=>mE.totalProgressValue !== 100));
+})
+
 app.get("/api/gantt", (req, res) =>{
     res.header("Content-Type",'application/json');
     let ganttData = data.moduleEvents;
 
     function taskToChildren (obj){
         obj["children"] = obj["tasks"];
-        //delete obj["tasks"];
+        // delete obj["tasks"];
     }
 
     ganttData.forEach(obj => taskToChildren(obj));
@@ -64,53 +140,12 @@ app.get("/api/gantt", (req, res) =>{
     res.send(ganttData);
 })
 
-app.get("/api/tasks/", (req, res) => {
-  res.header("Content-Type", 'application/json');
-  res.send(data.tasks);
-})
-
-// app.get("/api/module-event/module=:mName", (req,res)=>{
-//   const {mName} = req.params;
-//
-//   const foundModuleEv = data.moduleEvents.filter((moduleEvent) => moduleEvent.moduleName === mName);
-//
-//   res.send(foundModuleEv);
-// })
 
 app.get("/api/module-event/:id",
     (req, res) => {
       const {id} = req.params;
 
       const i = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === id);
-
-        if(data.moduleEvents[i].hasOwnProperty('tasks')){
-            data.moduleEvents[i].totalTasks = data.moduleEvents[i].tasks.length;
-            let count = 0;
-            for( let x in data.moduleEvents[i].tasks){
-                data.moduleEvents[i].totalProgressValue = 0;
-                for(let m in data.moduleEvents[i].tasks){
-                    data.moduleEvents[i].totalProgressValue += parseInt(data.moduleEvents[i].tasks[m].progressValue);
-                }
-                data.moduleEvents[i].totalProgressValue = data.moduleEvents[i].totalProgressValue/data.moduleEvents[i].tasks.length;
-                if (data.moduleEvents[i].tasks[x].progressValue === "100%"){
-                    count = count + 1;
-                }
-                data.moduleEvents[i].tasksCompleted = count;
-            }
-
-        } else{
-            data.moduleEvents[i].totalTasks = 0;
-            data.moduleEvents[i].tasksCompleted = 0;
-        }
-
-        if(data.moduleEvents[i].hasOwnProperty('notes')){
-            data.moduleEvents[i].totalNotes = data.moduleEvents[i].notes.length;
-        } else{
-            data.moduleEvents[i].totalNotes = 0;
-        }
-
-
-
 
       res.send(data.moduleEvents[i])
     })
@@ -139,11 +174,16 @@ app.get("/api/module-event/:meID/note/:noteID", (req,res) => {
 })
 
 app.delete("/api/module-event/:meID/note/:noteID", (req,res) => {
-     let foundModuleEvbyID = data.moduleEvents.find((moduleEvent) => moduleEvent.id === req.params.meID);
-     let foundNote = foundModuleEvbyID.notes.filter((note) => note.id !== req.params.noteID);
+    //Index for the note, and the module-event it is a part of is identified
 
-    data.moduleEvents.find((moduleEvent) => moduleEvent.id === req.params.meID).notes = foundNote;
-    //
+    const meID = req.params.meID;
+    const noteID = req.params.noteID;
+
+    const moduleEventIndex = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === meID);
+    const noteIndex = data.moduleEvents[moduleEventIndex].notes.findIndex((note) => note.id === noteID);
+
+    data.moduleEvents[moduleEventIndex].notes.splice(noteIndex,1)
+
     res.json({"msg":"Note Successfully deleted"});
 })
 
@@ -155,14 +195,12 @@ app.put("/api/module-event/:meID/note/:noteID", (req,res) => {
     const noteIndex = data.moduleEvents[moduleEventIndex].notes.findIndex((note) => note.id === noteID);
 
     data.moduleEvents[moduleEventIndex].notes[noteIndex] = req.body;
-    console.log(req.body)
     //
     res.json(data.moduleEvents[moduleEventIndex].notes[noteIndex]);
 })
 
 app.post("/api/module-event/:meID/note/", (req,res) => {
     const meID = req.params.meID;
-    const noteID = req.params.noteID;
 
     const moduleEventIndex = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === meID);
 
@@ -174,7 +212,8 @@ app.post("/api/module-event/:meID/note/", (req,res) => {
 
 
     data.moduleEvents[moduleEventIndex].notes.push(test);
-    console.log(test)
+
+    data.moduleEvents[moduleEventIndex].totalNotes += 1;
     //
     res.json(data.moduleEvents[moduleEventIndex].notes);
 })

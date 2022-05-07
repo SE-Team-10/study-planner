@@ -74,14 +74,16 @@ class Assignment extends Component {
                                 </ol>
                             </div>
                             <h1>{this.state.assignment.name}</h1>
+
                         </div>
 
                             <Tabs>
-                                <TabList className="tabs">
-                                    <Tab key={1}><a>Overview</a></Tab>
-                                    <Tab key={2}><a>Notes</a></Tab>
-                                    <Tab key={3}><a>Tasks</a></Tab>
-                                </TabList>
+                                    <TabList className="tabs">
+                                        <Tab key={1}><a>Overview</a></Tab>
+                                        <Tab key={2}><a>Notes</a></Tab>
+                                        <Tab key={3}><a>Tasks</a></Tab>
+                                    </TabList>
+
                                 <div className="content">
                                 <TabPanel key={1}><Overview info={this.state.assignment.moduleEventOverview} actualStart={this.state.assignment.actualStart} actualEnd={this.state.assignment.actualEnd} tasksCompleted={this.state.assignment.tasksCompleted} totalTasks={this.state.assignment.totalTasks} totalNotes={this.state.assignment.totalNotes} progressValue={parseInt(this.state.assignment.totalProgressValue)}/></TabPanel>
                                 <TabPanel key={2}>

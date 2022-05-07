@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="- Changes to Dashboard">
+    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="error fixed">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/study-planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/study-planner.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/testing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/testing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/note.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/note.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/upload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/var.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +60,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/eddie/Documents/study-planner/client/src/components/pages/Assignment&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/eddie/Documents/study-planner/client/src/components/pages/Assignment",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "watcher.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/components/pages/Assignment" />
@@ -100,7 +119,10 @@
       <workItem from="1651414129931" duration="3183000" />
       <workItem from="1651428083076" duration="53060000" />
       <workItem from="1651542695611" duration="4253000" />
-      <workItem from="1651547167350" duration="585000" />
+      <workItem from="1651547167350" duration="11537000" />
+      <workItem from="1651762685754" duration="66000" />
+      <workItem from="1651762810908" duration="1485000" />
+      <workItem from="1651928925126" duration="16248000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
@@ -144,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649694461173</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="error fixed">
+      <created>1651547793330</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651547793330</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +197,7 @@
     <MESSAGE value="gantt data and dashboard is linked. Improved dashboard slightly with past and upcoming deadlines seperated.&#10;However, progress for parent classes not displaying on dashboard yet." />
     <MESSAGE value="- Fixed account settings placement&#10;- Semester progress on DB calculates all completed tasks&#10;- Date goes red if a deadline is due in less than 5 days" />
     <MESSAGE value="- Changes to Dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Changes to Dashboard" />
+    <MESSAGE value="error fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="error fixed" />
   </component>
 </project>

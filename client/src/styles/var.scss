@@ -1,35 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap");
+@import url(//db.onlinewebfonts.com/c/6061c980f1f3f9420e1829c57a44cd23?family=Gilroy+Heavy);
+@import url(//db.onlinewebfonts.com/c/1064f0ad1cb65fdab43bb592ddd8aa91?family=Gilroy+Bold);
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-////Colors
-//$brand-color-1: rgb(0,122,255);
-//$brand-color-2: #6b2cff;
-//
-//$bg1: #fff;
-//$bg2: #f8f8f8;
-//$bg3: #e7e7e7;
-//
-//$text-color: #333;
-//$text-color-2: #aaa;
-//
-//$border: #e7e7e7;
-
-
-//Dark Mode
-$brand-color-1: rgb(10,132,255);
+//Colors
+$brand-color-1: rgb(0,122,255);
 $brand-color-2: #6b2cff;
-$bg1: #1f1f1f;
-$bg2: #181818;
-$bg3: #101010;
 
-$text-color: #f3f3f3;
+$bg1: #fff;
+$bg2: #f8f8f8;
+$bg3: #e7e7e7;
+
+$text-color: #333;
 $text-color-2: #aaa;
 
-$border: #2c2c2c;
+$border: #e7e7e7;
+
+
+////Dark Mode
+//$brand-color-1: rgb(10,132,255);
+//$brand-color-2: #6b2cff;
+//$bg1: #1f1f1f;
+//$bg2: #181818;
+//$bg3: #101010;
+//
+//$text-color: #f3f3f3;
+//$text-color-2: #aaa;
+//
+//$border: #2c2c2c;
 
 
 //Fonts
-$header-font: "Gilroy Bold", "Inter", sans-serif;
-$body-font: "Inter", sans-serif;
-$brand-font: "Gilroy Heavy","Inter", sans-serif;
+$header-font: "Gilroy Bold", "Inter", "Helvetica", sans-serif;
+$body-font: "Inter", "Helvetica", sans-serif;
+$brand-font: "Gilroy Heavy","Inter","Helvetica", sans-serif;
 
 //Responsive Sizes
 $mobile-width: 620px;
