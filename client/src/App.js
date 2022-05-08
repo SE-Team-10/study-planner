@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./App.css";
 import "./Login.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";

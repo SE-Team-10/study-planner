@@ -1,6 +1,7 @@
 import React,{useState, Component} from 'react';
 import Helmet from "react-helmet";
 
+
 class GanttChart extends Component {
   constructor(props) {
     super(props);

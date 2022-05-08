@@ -227,10 +227,6 @@ app.post("/api/module-event/:meID/note/", (req,res) => {
 })
 
 
-
-
-
-
 app.post('/api-upload', (req, res) => {
  req.busboy.on('file', function (fieldname, file, filename) {
    console.log("received file");
