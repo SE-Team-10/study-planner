@@ -1,12 +1,15 @@
 import React,{useState, Component} from 'react';
 import Helmet from "react-helmet";
 
+
 class GanttChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
       ganttData:"",
-    }
+      currentUser: props.location.state.sentUser,
+    };
+    console.log("Chart User: "+this.state.currentUser);
   };
 
     img = (data) => {
