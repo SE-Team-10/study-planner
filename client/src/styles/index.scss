@@ -1,0 +1,147 @@
+@use 'var';
+
+
+
+body {
+  margin: 0;
+  font-family: var.$body-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var.$bg2;
+  color: var.$text-color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var.$header-font;
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.test{
+  position: fixed;
+bottom: 0;
+text-align: center;
+width: 100%;
+opacity: 0.5;
+font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.ganttChart{
+    height: 90vh;
+}
+
+.main-content{
+  min-height: 85vh;
+}
+
+hr{
+    border-top: 1px solid var.$border;
+}
+
+p {
+  a {
+    text-decoration: none;
+    color: var.$brand-color-1;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+  .breadcrumbs {
+    padding: 0;
+    margin: 0; }
+
+  .breadcrumbs li {
+    display: inline-block;
+    position: relative;
+  }
+
+  .breadcrumbs li::after {
+    content:'>';
+    padding: 0 0.5em;
+  }
+
+
+  .breadcrumbs li:last-of-type::after {
+    display: none;
+  }
+
+
+
+  .breadcrumbs li a {
+    color: var.$brand-color-1;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+  }
+
+.breadcrumbs li:last-child a {
+  color: var.$text-color-2;;
+  pointer-events: none;
+  cursor: default;
+}
+.breadcrumbs li:last-child a:after { border: 0; }
+
+.tabs{
+  margin: 0;
+  padding: 0 2em;
+  border-bottom: solid 1px var.$border;
+}
+
+.tabs li a{
+  color: var.$text-color-2;
+  padding-top: 0.5em;
+  margin-bottom: 0em;
+  font-weight: 600;
+  display: block;
+}
+
+.tabs li a.active, .tabs li[aria-selected="true"] a {
+  color: var.$text-color;
+  &::after{
+    content: "";
+    display: block;
+    height: 0px;
+    padding: 0.2em 0;
+    margin-top: 0.5em;
+    border-radius: 100px;
+    background-color: var.$brand-color-1;
+  }
+}
+
+.tabs li{
+  display: inline-block;
+  position: relative;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+
+
+.tabs li:last-of-type::after {
+  display: none;
+}
+

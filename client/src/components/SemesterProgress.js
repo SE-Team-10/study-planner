@@ -1,5 +1,5 @@
 import React from "react";
-import "./SemesterProgress.scss";
+import "../styles/SemesterProgress.scss";
 
 
 const SemesterProgress = (props) => {

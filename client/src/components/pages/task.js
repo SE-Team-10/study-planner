@@ -1,7 +1,6 @@
-import React from "react";
-import "../../App.css";
+import React, {useEffect} from "react";
 import {Link, withRouter} from "react-router-dom";
-import "../Modal.scss"
+import "../../styles/Modal.scss"
 import ReactDom from "react-dom";
 import SubTask from "../SubTask";
 import RadialProgress from "../RadialProgress";
@@ -10,9 +9,22 @@ import RadialProgress from "../RadialProgress";
 
 function Task(props) {
 
-    const testData = img()
 
-    let task = testData.find(object => {return object.id===props.match.params.id})
+    useEffect(() => {
+        document.body.classList.add("active-modal");
+        document.title = `${task.name} - Study Planner`;
+
+        return () => {
+            document.body.classList.remove("active-modal");
+            document.title = `Study Planner`;
+        }
+    });
+
+
+
+
+    let task = [];
+
 
     let UTCstart = new Date(task.actualStart);
 

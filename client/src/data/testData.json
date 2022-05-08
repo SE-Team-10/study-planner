@@ -1,72 +1,51 @@
-[
-  {
-  "id": "1",
-  "name": "VOIP Project",
-  "module": "Networks",
-  "type": "Group Coursework",
-  "actualStart": "2022-02-02T00:00:00.000Z",
-  "actualEnd": "2022-07-15T00:00:00.000Z",
-  "children": [{
-    "id": "1_1",
-    "name": "Initial Implementation",
-    "actualStart": "2022-02-02T00:00:00.000Z",
-    "actualEnd": "2022-02-22T00:00:00.000Z",
-    "connectTo": "1_2",
-    "connectorType": "finish-start",
-    "progressValue": "100%"
-  },
+{
+  "semesterName": "Spring 2022",
+  "modules": [
     {
-      "id": "1_2",
-      "name": "Group Report",
-      "actualStart": "2022-01-23T00:00:00.000Z",
-      "actualEnd": "2022-03-20T00:00:00.000Z",
-      "connectTo": "1_3",
-      "connectorType": "start-start",
-      "progressValue": "60%"
+      "name": "Software Engineering",
+      "id": "CMP-5012B",
+      "moduleOverview": "Software Engineering is one of the most essential skills for work in the software development industry. You will gain an understanding of the issues involved in designing and creating software systems from an industry perspective.",
+      "notes": "",
+      "moduleEvents": [
+        {
+          "name": "Software Engineering Project",
+          "moduleEventOverview": "Some text about this coursework",
+          "notes": "",
+          "type": "Group Coursework",
+          "startDate": "2022-01-31T00:00:00.0000",
+          "deadline": "2022-05-20T15:00:00.0000",
+          "value": 100
+        }
+      ]
     },
     {
-      "id": "1_3",
-      "name": "Individual Report",
-      "actualStart": "2022-03-20T00:00:00.000Z",
-      "actualEnd": "2022-03-23T00:00:00.000Z",
-      "connectTo": "1_4",
-      "connectorType": "start-start",
-      "progressValue": "80%"
-    },
-    {
-      "id": "1_4",
-      "name": "Revision",
-      "actualStart": "2022-03-23T00:00:00.000Z",
-      "actualEnd": "2022-03-30T00:00:00.000Z",
-      "progressValue": "80%"
-    }
+      "name": "Data Structures and Algorithms",
+      "id": "CMP-5014B",
+      "moduleOverview": "Assessment for this module involves four blackboard quizzes, each on different topics and two online exams, part 1 on material taught in weeks 1-6 (taken before Easter), part 2 on material in weeks 7-12 (taken in the week after the end of term).",
+      "moduleEvents": [
+        {
+          "name": "Blackboard Quiz 1",
+          "type": "Online Quiz",
+          "startDate": "2022-02-17T09:00:00.0000",
+          "deadline": "2022-02-17T23:30:00.0000",
+          "value": 7.5,
 
+        },
+        {
+          "name": "Blackboard Quiz 2",
+          "type": "Online Quiz",
+          "startDate": "2022-03-10T09:00:00.0000",
+          "deadline": "2022-03-10T23:30:00.0000",
+          "value": 7.5
+        },
+        {
+          "name": "Online Test 1",
+          "type": "Online Exam",
+          "startDate": "2022-04-28T09:00:00.0000",
+          "deadline": "2022-04-20T09:00:00.0000",
+          "value": 30
+        }
+      ]
+    }
   ]
-},
-  {
-    "id": "2",
-    "name": "Software Engineering Project",
-    "actualStart": "2022-03-02T00:00:00.000Z",
-    "actualEnd": "2022-03-28T00:00:00.000Z",
-    "module": "Software Engineering",
-    "type": "Group Coursework",
-    "children": [{
-      "id": "2_1",
-      "name": "Use cases",
-      "actualStart": "2022-03-20T00:00:00.000Z",
-      "actualEnd": "2022-04-14T00:00:00.000Z",
-      "connectTo": "1_2",
-      "connectorType": "finish-start",
-      "progressValue": "75%"
-    },
-      {
-        "id": "2_2",
-        "name": "Class diagrams",
-        "actualStart": "2022-03-06T00:00:00.000Z",
-        "actualEnd": "2022-04-28T00:00:00.000Z",
-        "connectTo": "1_2",
-        "connectorType": "finish-start",
-        "progressValue": "75%"
-      }]
-  }
-]
+}

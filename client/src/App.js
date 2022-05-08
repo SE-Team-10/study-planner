@@ -11,6 +11,9 @@ import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
 import Task from "./components/pages/task";
 import Upload from "./components/pages/upload";
+import "./styles/form.scss"
+import Assignment from "./components/pages/Assignment/assignment";
+import Module from "./components/pages/Module/module";
 
 const database = [
   {
@@ -45,6 +48,7 @@ class App extends React.Component {
     this.state = {
       data: null,
       isSubmitted: false,
+      apiResponse: "",
       currentUser: null,
     };
 
@@ -145,19 +149,19 @@ class App extends React.Component {
     console.log("currentUser: "+user);
     return (
       <>
-        <Helmet>
-          <script src="../public/testing.js" type="text/javascript" />
-        </Helmet>
         <Router>
-          <p className="test">{this.state.data}</p>
+          <p className="test">{this.state.apiResponse}</p>
           <Navbar sentUser = {user}/>
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/chart" exact component={GanttChart} />
-            <Route path="/addnew" exact component={AddNew} />
-            <Route path="/upload" exact component={Upload} />
-            <Route path={"/task/:id/:name"}><Task /></Route>
-          </Switch>
+            <div className="main-content">
+              <Switch>
+                  <Route path="/" exact component={Dashboard} />
+                  <Route path="/chart" exact component={GanttChart} />
+                  <Route path="/addnew" exact component={AddNew} />
+                  <Route path="/upload" exact component={Upload} />
+                  <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
+                  <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
+              </Switch>
+            </div>
         </Router>
         <Footer/>
       </>
