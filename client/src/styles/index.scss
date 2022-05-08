@@ -1,14 +1,6 @@
 @use 'var';
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap");
-@import url(//db.onlinewebfonts.com/c/6061c980f1f3f9420e1829c57a44cd23?family=Gilroy+Heavy);
-@import url(//db.onlinewebfonts.com/c/1064f0ad1cb65fdab43bb592ddd8aa91?family=Gilroy+Bold);
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-
-webpack-dev-server-client-overlay{
-    display: none !important;
-}
 
 body {
   margin: 0;
@@ -27,6 +19,8 @@ code {
 h1, h2, h3, h4, h5, h6{
     font-family: var.$header-font;
     font-weight: 500;
+    display: inline-block;
+    margin-right: 0.5em;
 }
 
 .container {
@@ -47,6 +41,10 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 
 .ganttChart{
     height: 90vh;
+}
+
+.main-content{
+  min-height: 85vh;
 }
 
 hr{
@@ -146,3 +144,4 @@ a {
 .tabs li:last-of-type::after {
   display: none;
 }
+

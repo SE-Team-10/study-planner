@@ -28,7 +28,7 @@ div.overlay{
     transform: translate(-50%, -50%);
     width: 100%;
     max-width:666px;
-    min-height: 80vh;
+    height: 80vh;
     .hero{
         background-color: var.$brand-color-1;
         //background-image:
@@ -69,6 +69,8 @@ div.overlay{
         //border-bottom: 1px solid var.$border;
         margin: 0;
         padding: 2em 2em 0 2em;
+        background-color: var.$bg1;
+        border-radius: 6px 6px 0 0;
         h2{
             display: inline-block;
         }
@@ -118,6 +120,17 @@ div.overlay{
     gap: 1em;
     grid-template-columns: 3fr 3fr 3fr;
     align-items: center;
+}
+
+.react-tabs{
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    flex: 1 1 auto;
+}
+
+.tabs{
+    background-color: var.$bg1;
 }
 
 @media only screen and (max-width: var.$mobile-width) {

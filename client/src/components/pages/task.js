@@ -1,5 +1,4 @@
 import React, {useEffect} from "react";
-import "../../App.css";
 import {Link, withRouter} from "react-router-dom";
 import "../../styles/Modal.scss"
 import ReactDom from "react-dom";
