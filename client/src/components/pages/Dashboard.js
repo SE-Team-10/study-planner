@@ -9,9 +9,16 @@ import withData from "../withData";
 import Assignment from "./Assignment/assignment";
 import ModuleCard from "../ModuleCard";
 
-// var upcomingDeadlines=[];
-// var pastDeadlines=[];
-// var completedDeadlines=[];
+//Convert function to class and add constructor to view currentUser, see upload.js for reference
+
+//let testData = img()
+
+
+//var tasks = testData;
+
+// var tasksChildren = testData.map(value =>
+//     value.children.map(child => ({ parentId: value.id, ...child }))
+// ).flat();
 //
 // var fiveDays = Date.now() + 432000000;
 //
@@ -88,8 +95,6 @@ class Dashboard extends Component{
             .then(r => r.json())
             .then(moduleEvents => this.setState({moduleEvents}))
     }
-
-
 
     render(){
         return (

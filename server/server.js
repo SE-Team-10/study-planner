@@ -2,7 +2,7 @@ const express = require("express");
 let busboy = require('connect-busboy');
 var path = require('path');
 const fs = require('fs');
-const app = express(); 
+const app = express();
 const port = 5000;
 const shortid = require('shortid');
 
@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 let data = require('./userData/admin.json');
 
 
-app.listen(port, () => console.log(`Listening on port ${port}`)); 
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -227,15 +227,11 @@ app.post("/api/module-event/:meID/note/", (req,res) => {
 })
 
 
-
-
-
-
 app.post('/api-upload', (req, res) => {
  req.busboy.on('file', function (fieldname, file, filename) {
-   console.log("received file")
-   console.log(fieldname)
-   console.log(filename)
+   console.log("received file");
+   console.log(fieldname);
+   console.log(filename);
    var fstream = fs.createWriteStream('./userData/' + filename.filename);
    file.pipe(fstream);
    fstream.on('close', function () {
