@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
 
 class Navbar extends Component {
@@ -11,16 +11,15 @@ class Navbar extends Component {
     };
   }
 
-  //static location = useLocation();
-
-  //getLocation = () => {
-    //const { pathname } = this.location;
-    //const splitLocation = pathname.split("/");
-    //console.log(splitLocation[1]);
-    //return(splitLocation[1]);
-  //}
-
-  // className={this.getLocation() === "" ? "active" : ""}
+  // splitLocation = () => {
+  //   const location = useLocation();
+  //
+  //   //destructuring pathname from location
+  //   const { pathname } = location;
+  //
+  //   //Javascript split method to get the name of the path in array
+  //   return pathname.split("/");
+  // }
 
   render() {
     return (
@@ -28,19 +27,22 @@ class Navbar extends Component {
         <nav className="navbar">
           <div className="navbar-container container">
 
-            <Link className="navbar-brand" to="/">StudyPlanner</Link>
+            <Link className="navbar-brand" to="/">
+              <span className="material-icons md-24 close-button mobile-brand">school</span>
+              <span className="desktop-brand">StudyPlanner</span>
+            </Link>
             <ul className={"nav-menu"}>
-              <li>
-                <Link to={{pathname: "/", state: {sentUser: this.state.currentUser},}}>Dashboard</Link>
+              <li >
+                <NavLink exact to={{pathname: "/", state: {sentUser: this.state.currentUser},}}>Dashboard</NavLink>
+              </li>
+              <li >
+                <NavLink to={{pathname: "/chart", state: {sentUser: this.state.currentUser},}}>Gantt Chart</NavLink>
               </li>
               <li>
-                <Link to={{pathname: "/chart", state: {sentUser: this.state.currentUser},}}>Gantt Chart</Link>
+                <NavLink to={{pathname: "/addnew", state: {sentUser: this.state.currentUser},}}>Add New</NavLink>
               </li>
               <li>
-                <Link to={{pathname: "/addnew", state: {sentUser: this.state.currentUser},}}>Add New</Link>
-              </li>
-              <li>
-                <Link to={{pathname: "/upload", state: {sentUser: this.state.currentUser},}}>Upload File</Link>
+                <NavLink to={{pathname: "/upload", state: {sentUser: this.state.currentUser},}}>Upload File</NavLink>
               </li>
             </ul>
             <div className="navbar-account" style={{backgroundImage: `url(/profile.png)`}}>

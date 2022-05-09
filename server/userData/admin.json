@@ -39,15 +39,14 @@
     "tasks": [
       {
         "id": "1_1_1",
-        "moduleEventName": "Software Engineering Project",
         "name": "Initial Implementation",
         "actualStart": "2022-05-11T00:00:00.0000",
         "actualEnd": "2022-05-23T00:00:00.0000",
         "progressValue": "50%"
+
       },
       {
         "id": "1_1_2",
-        "moduleEventName": "Software Engineering Project",
         "name": "Something Else",
         "actualStart": "2022-05-14T00:00:00.0000",
         "actualEnd": "2022-05-23T00:00:00.0000",

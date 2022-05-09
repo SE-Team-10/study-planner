@@ -19,6 +19,7 @@
   padding: 1em;
   transition: transform 60ms;
   display: block;
+  border-left: 0.5em solid var.$brand-color-1;
 
   &:hover {
     transform: scale(1.03);
