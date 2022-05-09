@@ -34,8 +34,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.callBackendAPI()
-      .then((res) => this.setState({ data: res.express }))
-      .catch((err) => console.log(err));
+        .then((res) => this.setState({ data: res.express }))
+        .catch((err) => console.log(err));
   }
 
   // fetching the GET route from the Express server which matches the GET route from server.js
@@ -111,36 +111,36 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-  )};
+    )};
 
   home = (user) => {
     console.log("currentUser: "+user);
     return (
-      <div className="content">
-        <Router>
-          <p className="test">{this.state.apiResponse}</p>
-          <Navbar sentUser = {user}/>
+        <div className="content">
+          <Router>
+            <p className="test">{this.state.apiResponse}</p>
+            <Navbar sentUser = {user}/>
             <div className="main-content">
               <Switch>
-                  <Route path="/" exact component={Dashboard} />
-                  <Route path="/chart" exact component={GanttChart} />
-                  <Route path="/addnew" exact component={AddNew} />
-                  <Route path="/upload" exact component={Upload} />
-                  <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
-                  <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
+                <Route path="/" exact component={Dashboard} />
+                <Route path="/chart" exact component={GanttChart} />
+                <Route path="/addnew" exact component={AddNew} />
+                <Route path="/upload" exact component={Upload} />
+                <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
+                <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
               </Switch>
             </div>
-        </Router>
-        <Footer/>
-      </div>
-  )};
+          </Router>
+          <Footer/>
+        </div>
+    )};
 
   render() {
     return (
-      <body>
+        <body>
         {this.state.isSubmitted ? this.home(this.state.currentUser) : this.renderForm()}
-      </body>
-  );}
+        </body>
+    );}
 }
 
 const rootElement = document.getElementById("root");

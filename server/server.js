@@ -40,7 +40,7 @@ updataData = (user) => {
         throw err;
     }
     // parse JSON object
-    data = JSON.parse(contents.toString());
+    data = dynamicData(JSON.parse(contents.toString()));
   });
 }
 
