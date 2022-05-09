@@ -9,7 +9,6 @@ class Navbar extends Component {
     this.state = {
       currentUser: this.props.sentUser,
     };
-    console.log("Navbar user: "+this.state.currentUser);
   }
 
   //static location = useLocation();

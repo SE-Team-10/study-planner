@@ -1,4 +1,5 @@
 const express = require("express");
+
 let busboy = require('connect-busboy');
 var path = require('path');
 const fs = require('fs');
@@ -8,13 +9,21 @@ const shortid = require('shortid');
 
 var cors = require("cors");
 const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 
 app.use(cors());
 
 app.use(bodyParser.json())
 
+var currentUser = "admin";
+let accountData = require('./accountData.json');
 let data = require('./userData/admin.json');
 
+const errors = {
+  semester: "Incorrect Semester",
+  uname: "Invalid Username",
+  pass: "Invalid Password"
+};
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
@@ -24,6 +33,16 @@ app.use((req, res, next) => {
 });
 
 app.use(busboy());
+
+updataData = (user) => {
+  fs.readFile(`./userData/${user}.json`, 'utf-8', (err, contents) => {
+    if (err) {
+        throw err;
+    }
+    // parse JSON object
+    data = JSON.parse(contents.toString());
+  });
+}
 
 dynamicData = (data) => {
     data.totalSemesterProgress = 0;
@@ -43,7 +62,6 @@ dynamicData = (data) => {
                 }
                 data.moduleEvents[i].tasksCompleted = count;
             }
-
         } else {
             data.moduleEvents[i].totalTasks = 0;
             data.moduleEvents[i].tasksCompleted = 0;
@@ -226,6 +244,28 @@ app.post("/api/module-event/:meID/note/", (req,res) => {
     res.json(data.moduleEvents[moduleEventIndex].notes);
 })
 
+app.post('/checkUser',jsonParser ,async function(req, res){
+  let userLog = req.body;
+  const userData = accountData.find((user) => user.userName === userLog.name);
+  let code = 100;
+  // Compare user info
+  res.setHeader('Content-Type', 'application/json');
+  if (userData) {
+    if(userData.PassWord !== userLog.password){
+      res.json({code: 100, name: "pass", message: errors.pass});
+    } else if (userData.Semester !== userLog.semester) {
+      res.json({code: 100, name: "semester", message: errors.semester});
+    } else {
+      res.json({code: 200, name: userData.userName});
+      console.log("success "+userData.userName+" is logged in");
+      currentUser = userData.userName;
+      await updataData(currentUser);
+    }
+  } else {
+    // Username not found
+    res.json({code: 100, name: "uname", message: errors.uname});
+  }
+});
 
 app.post('/api-upload', (req, res) => {
  req.busboy.on('file', function (fieldname, file, filename) {
