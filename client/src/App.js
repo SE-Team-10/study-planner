@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from 'axios';
 import "./Login.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
@@ -14,30 +15,6 @@ import "./styles/form.scss"
 import Assignment from "./components/pages/Assignment/assignment";
 import Module from "./components/pages/Module/module";
 
-const database = [
-  {
-    "userName": "Bob",
-    "PassWord": "1",
-    "Semester": "Semester 1"
-  },
-  {
-    "userName": "Tom",
-    "PassWord": "2",
-    "Semester": "Semester 2"
-  },
-  {
-    "userName": "Amy",
-    "PassWord": "3",
-    "Semester": "Semester 3"
-  }
-];
-
-const errors = {
-  semester: "Incorrect Semester",
-  uname: "Invalid Username",
-  pass: "Invalid Password"
-};
-
 var tempError = null;
 
 class App extends React.Component {
@@ -47,6 +24,7 @@ class App extends React.Component {
     this.state = {
       data: null,
       isSubmitted: false,
+      newUser: false,
       apiResponse: "",
       currentUser: null,
     };
@@ -71,31 +49,22 @@ class App extends React.Component {
     return body;
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     //Prevent page reload
     event.preventDefault();
 
     var { semester, uname, pass } = document.forms[0];
-    // Find user login info
-    const userData = database.find((user) => user.userName === uname.value);
-    console.log(userData.userName);
-    // Compare user info
-    if (userData) {
-      if(userData.PassWord !== pass.value){
-        tempError = {name: "pass", message: errors.pass};
-      } else if (userData.Semester !== semester.value) {
-        tempError = {name: "semester", message: errors.semester};
-      } else {
-        this.setState({currentUser: userData.userName});
-        this.setState({isSubmitted: true});
-      }
-    } else {
-      // Username not found
-      tempError = {name: "uname", message: errors.uname};
-    }
-    if(tempError){
-      console.log(tempError.message);
-    }
+    let userLog = JSON.stringify({semester: semester.value, name: uname.value, password: pass.value});
+    console.log(userLog);
+    const result = await fetch('http://localhost:5000/checkUser', {method: "POST", headers: {"Content-Type": "application/json"}, body:userLog})
+    const returnMessage = await result.json();
+    if(returnMessage.code == 200){
+      this.setState({currentUser: returnMessage.name});
+      this.setState({isSubmitted: true});
+    }else{
+      console.log(returnMessage);
+      tempError = {name: returnMessage.name, message: returnMessage.message};
+    };
     this.forceUpdate();
   };
 
@@ -147,7 +116,7 @@ class App extends React.Component {
   home = (user) => {
     console.log("currentUser: "+user);
     return (
-      <>
+      <div className="content">
         <Router>
           <p className="test">{this.state.apiResponse}</p>
           <Navbar sentUser = {user}/>
@@ -163,7 +132,7 @@ class App extends React.Component {
             </div>
         </Router>
         <Footer/>
-      </>
+      </div>
   )};
 
   render() {
