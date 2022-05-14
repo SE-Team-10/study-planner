@@ -9,11 +9,11 @@ import { BrowserRouter as Router, Switch, Route, useHistory} from "react-router-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
-import Task from "./components/pages/task";
 import Upload from "./components/pages/upload";
 import "./styles/form.scss"
 import Assignment from "./components/pages/Assignment/assignment";
 import Module from "./components/pages/Module/module";
+import Settings from "./components/pages/settings";
 
 var tempError = null;
 
@@ -147,6 +147,7 @@ class App extends React.Component {
   home = (user) => {
     console.log("currentUser: "+user);
     return (
+
       <div className="content">
         <div style={{display: this.state.isNew ? 'block' : 'none' }} className="overlay">
           <div className="logbox">

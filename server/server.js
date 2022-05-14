@@ -58,7 +58,7 @@ dynamicData = (data) => {
                 for (let m in data.moduleEvents[i].tasks) {
                     data.moduleEvents[i].totalProgressValue += parseInt(data.moduleEvents[i].tasks[m].progressValue);
                 }
-                data.moduleEvents[i].totalProgressValue = data.moduleEvents[i].totalProgressValue / data.moduleEvents[i].tasks.length;
+                data.moduleEvents[i].totalProgressValue = Math.round(data.moduleEvents[i].totalProgressValue / data.moduleEvents[i].tasks.length);
                 if (data.moduleEvents[i].tasks[x].progressValue === "100%") {
                     count = count + 1;
                 }
@@ -78,7 +78,7 @@ dynamicData = (data) => {
 
         data.totalSemesterProgress += data.moduleEvents[i].totalProgressValue;
     }
-    data.totalSemesterProgress = data.totalSemesterProgress / data.moduleEvents.length;
+    data.totalSemesterProgress = Math.round(data.totalSemesterProgress / data.moduleEvents.length);
     return data;
 }
 
@@ -184,9 +184,6 @@ app.get("/api/task/module-event=:mEName", (req,res)=>{
   res.send(foundTask)
 })
 
-app.get("/api/test", (req, res) => {
-    res.send("Frontend (:3000) linked to backend (:5000)")
-})
 
 app.get("/api/module-event/:meID/note/:noteID", (req,res) => {
     const meID = req.params.meID;
@@ -239,10 +236,74 @@ app.post("/api/module-event/:meID/note/", (req,res) => {
 
     data.moduleEvents[moduleEventIndex].notes.push(test);
 
-    // data.moduleEvents[moduleEventIndex].totalNotes += 1;
-    //
     res.json(data.moduleEvents[moduleEventIndex].notes);
 })
+
+//Retrieve Task
+app.get("/api/module-event/:meID/task/:taskID", (req,res) => {
+    const meID = req.params.meID;
+    const taskID = req.params.taskID;
+
+    const moduleEventIndex = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === meID);
+    const taskIndex = data.moduleEvents[moduleEventIndex].tasks.findIndex((note) => note.id === taskID);
+
+    data = dynamicData(data);
+    //
+    res.json(data.moduleEvents[moduleEventIndex].tasks[taskIndex]);
+})
+
+//Delete Task
+app.delete("/api/module-event/:meID/task/:taskID", (req,res) => {
+
+    const meID = req.params.meID;
+    const taskID = req.params.taskID;
+
+    const moduleEventIndex = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === meID);
+    const taskIndex = data.moduleEvents[moduleEventIndex].tasks.findIndex((task) => task.id === taskID);
+
+    data.moduleEvents[moduleEventIndex].tasks.splice(taskIndex,1)
+
+    data = dynamicData(data);
+
+    res.json({"msg":"Task Successfully deleted"});
+})
+
+//Update task
+app.put("/api/module-event/:meID/task/:taskID", (req,res) => {
+    const meID = req.params.meID;
+    const taskID = req.params.taskID;
+
+    const moduleEventIndex = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === meID);
+    const taskIndex = data.moduleEvents[moduleEventIndex].tasks.findIndex((task) => task.id === taskID);
+
+    data.moduleEvents[moduleEventIndex].tasks[taskIndex] = req.body;
+
+    data = dynamicData(data);
+
+    res.json(data.moduleEvents[moduleEventIndex].tasks[taskIndex]);
+})
+
+app.post("/api/module-event/:meID/task/", (req,res) => {
+    const meID = req.params.meID;
+
+    const moduleEventIndex = data.moduleEvents.findIndex((moduleEvent) => moduleEvent.id === meID);
+
+    const currentTime = new Date(Date.now());
+
+    const jsonDate = currentTime.toJSON();
+
+    const newTask = {id:shortid.generate(), name:"", actualStart:jsonDate, actualEnd:"", progressValue:"0%"}
+
+
+    data.moduleEvents[moduleEventIndex].tasks.push(newTask);
+
+    data = dynamicData(data);
+
+    res.json(data.moduleEvents[moduleEventIndex].tasks);
+})
+
+
+
 
 app.post('/checkUser',jsonParser ,async function(req, res){
   let userLog = req.body;
@@ -297,8 +358,10 @@ app.get('/api-download', (req, res) => {
   };
 });
 
+
 app.get("/forceUpdate", async function(req, res){
   await updataData(currentUser);
   console.log("forced update");
   res.send("Updated")
 })
+
