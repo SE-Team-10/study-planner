@@ -54,6 +54,10 @@ body{
   width: 70%;
 }
 
+.form > h2{
+  text-align: center;
+}
+
 select{
   height: 35px;
   width: 100%;

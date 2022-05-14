@@ -1,5 +1,4 @@
 const express = require("express");
-
 let busboy = require('connect-busboy');
 var path = require('path');
 const fs = require('fs');
@@ -35,12 +34,15 @@ app.use((req, res, next) => {
 app.use(busboy());
 
 updataData = (user) => {
-  fs.readFile(`./userData/${user}.json`, 'utf-8', (err, contents) => {
-    if (err) {
-        throw err;
-    }
-    // parse JSON object
-    data = dynamicData(JSON.parse(contents.toString()));
+  return new Promise((resolve, reject) => {
+    fs.readFile(`./userData/${user}.json`, 'utf-8', (err, contents) => {
+      if (err) {
+        resolve(true);
+      }else if(contents){
+        data = dynamicData(JSON.parse(contents.toString()));
+        resolve(false);
+      }
+    })
   });
 }
 
@@ -79,8 +81,6 @@ dynamicData = (data) => {
     data.totalSemesterProgress = data.totalSemesterProgress / data.moduleEvents.length;
     return data;
 }
-
-data = dynamicData(data);
 
 //send message from api to react app (client) that express is connected
 app.get("/api", (req, res) => {
@@ -256,10 +256,15 @@ app.post('/checkUser',jsonParser ,async function(req, res){
     } else if (userData.Semester !== userLog.semester) {
       res.json({code: 100, name: "semester", message: errors.semester});
     } else {
-      res.json({code: 200, name: userData.userName});
       console.log("success "+userData.userName+" is logged in");
       currentUser = userData.userName;
-      await updataData(currentUser);
+      const newUser = await updataData(currentUser);
+      console.log(newUser)
+      if (newUser){
+        res.json({code: 200, name: userData.userName, new: true});
+      }else{
+        res.json({code: 200, name: userData.userName, new: false});
+      }
     }
   } else {
     // Username not found
@@ -269,8 +274,6 @@ app.post('/checkUser',jsonParser ,async function(req, res){
 
 app.post('/api-upload', (req, res) => {
  req.busboy.on('file', function (fieldname, file, filename) {
-   console.log("received file");
-   console.log(fieldname);
    console.log(filename);
    var fstream = fs.createWriteStream('./userData/' + filename.filename);
    file.pipe(fstream);
@@ -281,11 +284,21 @@ app.post('/api-upload', (req, res) => {
  req.pipe(req.busboy);
 });
 
-app.get('/api-download/:user', (req, res) => {
-  const fileName = req.params.user+'.json';
-  if (fs.existsSync('./userData/'+fileName)){
+app.get('/api-download', (req, res) => {
+  const fileName = `${currentUser}.json`;
+  if (fs.existsSync(`./userData/${fileName}`)){
     console.log(fileName+" exists");
-    res.sendFile(fileName, { root : path.join(__dirname, '/userData')});
+    res.download(path.join(__dirname, `./userData/${fileName}`), function(err){
+      if(err){
+        console.log(err)
+      }
+    });
     console.log("Sent: "+fileName);
   };
 });
+
+app.get("/forceUpdate", async function(req, res){
+  await updataData(currentUser);
+  console.log("forced update");
+  res.send("Updated")
+})

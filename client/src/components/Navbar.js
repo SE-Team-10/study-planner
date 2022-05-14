@@ -50,7 +50,7 @@ class Navbar extends Component {
               <p>{this.state.currentUser}</p>
               <ul>
                   <li><Link to="#">Settings</Link></li>
-                  <li><Link to="#">Log out</Link></li>
+                  <li><Link to="#" onClick={() => window.location.reload()}>Log out</Link></li>
               </ul>
               </div>
             </div>
