@@ -8,6 +8,7 @@ import Overview from "./overview";
 import Note from "./note";
 import DeadlineCard from "../../DeadlineCard";
 import Notes from "./Notes";
+import Tasks from "./tasks";
 
 
 class Assignment extends Component {
@@ -90,7 +91,9 @@ class Assignment extends Component {
 
 
                                 </TabPanel>
-                                <TabPanel key={3}>And tasks would be here</TabPanel>
+                                <TabPanel key={3}>
+                                    <Tasks assignmentID={this.state.assignment.id}/>
+                                </TabPanel>
                                 </div>
                             </Tabs>
                     </div>

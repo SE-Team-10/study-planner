@@ -9,11 +9,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
-import Task from "./components/pages/task";
 import Upload from "./components/pages/upload";
 import "./styles/form.scss"
 import Assignment from "./components/pages/Assignment/assignment";
 import Module from "./components/pages/Module/module";
+import Settings from "./components/pages/settings";
 
 var tempError = null;
 
@@ -128,6 +128,7 @@ class App extends React.Component {
                 <Route path="/upload" exact component={Upload} />
                 <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
                 <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
+                <Route path={"/settings"}><Settings/></Route>
               </Switch>
             </div>
           </Router>

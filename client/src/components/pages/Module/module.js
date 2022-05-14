@@ -1,13 +1,9 @@
 import React, {useState, Component} from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import {Link, BrowserRouter, Switch, Route, useLocation, withRouter, NavLink} from "react-router-dom";
+import {Link, withRouter } from "react-router-dom";
 import "../../../styles/Modal.scss"
 import ReactDom from "react-dom";
-import RadialProgress from "../../RadialProgress";
-import Overview from "./overview";
-import Note from "./note";
 import DeadlineCard from "../../DeadlineCard";
-import Notes from "./Notes";
 
 
 class Module extends Component {

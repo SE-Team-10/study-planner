@@ -13,7 +13,7 @@
     padding: 0;
     overflow: auto;
     white-space: nowrap;
-    display: inline-block;
+    display: inline;
   }
   li {
     display: inline-block;
@@ -74,8 +74,49 @@
 }
 
 .navbar-account{
-  border: 2px solid var.$border;
   float: right;
+  display: flex;
+  align-items: center;
+  .username{
+    font-size: 0.8em;
+    padding-right: 0.5em;
+    color: var.$brand-color-1;
+    min-width: 10em;
+    text-align: right;
+  }
+  .account-menu{
+    display:none;
+    background: var.$bg1;
+    position:absolute;
+    top:55px;
+    padding:1em;
+    border-radius:0 0 6px 6px;
+    border-bottom: var.$border solid 1px;
+    border-left: var.$border solid 1px;
+    border-right: var.$border solid 1px;
+    //transform: translate(50%,0);
+    float: right;
+    z-index: 1;
+  }
+  &:hover {
+    cursor: pointer;
+
+    .account-menu {
+      display: block;
+    }
+
+    ul {
+      display: grid
+    }
+
+    .profile-pic{
+      border: 2px solid var.$brand-color-1;
+    }
+  }
+}
+
+.profile-pic{
+  border: 2px solid var.$border;
   height: 40px;
   width: 40px;
   background-color: var.$border;
@@ -84,29 +125,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  .account-menu{
-    display:none;
-  }
-  &:hover{
-  border:2px solid var.$brand-color-1;
-  cursor: pointer;
-  .account-menu{
-    display:block;
-    background: var.$bg1;
-    position:absolute;
-    top:50px;
-    right: 20px;
-    padding:1em;
-    border-radius:0 0 6px 6px;
-    border-bottom: var.$border solid 1px;
-    border-left: var.$border solid 1px;
-    border-right: var.$border solid 1px;
-  }
-  ul{
-  display: grid
-  }
 
-  }
 }
 
 @media only screen and (max-width: var.$mobile-width) {
@@ -116,6 +135,18 @@
   }
   .mobile-brand{
     margin-right: 0;
+  }
+
+  .mobile-only{
+    display: block;
+  }
+
+  .navbar-account{
+    display: none;
+  }
+
+  .navbar ul{
+    display: block;
   }
 
 }

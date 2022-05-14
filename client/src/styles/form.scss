@@ -53,3 +53,20 @@ input[type="file"] {
   opacity: 0.8;
   cursor: text;
 }
+
+input[type="date"] {
+  font-family: inherit;
+  border: none;
+  color: var.$brand-color-1;
+  padding: 0;
+  margin:0;
+  font-size: inherit;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  outline: none!important;
+  &:focus-visible{
+
+  }
+}
+

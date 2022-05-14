@@ -10,6 +10,11 @@
   margin: 0.5em 0;
 }
 
+.note .progress-bar-radial{
+  font-size: 1em;
+  float: left;
+  margin-right: 1em;
+}
 
 .note-header{
   color: var.$text-color-2;
@@ -35,4 +40,33 @@
   border-radius: 6px;
   padding: 1em;
   margin-bottom: 0.5em;
+}
+
+.study-type-input{
+  font-family: inherit;
+  width: auto;
+  text-transform: uppercase;
+  border: none !important;
+  height: auto !important;
+  color: var.$brand-color-1;
+  cursor: pointer;
+  max-width: 140px;
+}
+
+.task-save{
+  display: none;
+  padding: 1em 0 2em 0;
+  button{
+    float: right;
+    font-size: 0.8em;
+  }
+}
+
+.task-error{
+  color: var.$error;
+  float: left;
+}
+
+.visible{
+  display: block;
 }

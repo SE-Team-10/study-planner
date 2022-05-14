@@ -24,8 +24,8 @@ function Notes({assignmentID}) {
     return (
         <>
             <button onClick={addNote}><span className="material-icons">add</span> Note</button>
-        {notesArray.reverse().map((note, idx) => (
-                <Note key={idx} text={note.text} noteID={note.id} assignmentID={assignmentID} dateCreated={note.dateCreated}/>
+        {notesArray.reverse().map((note) => (
+                <Note key={note.id} text={note.text} noteID={note.id} assignmentID={assignmentID} dateCreated={note.dateCreated}/>
             ))}
         </>
 
