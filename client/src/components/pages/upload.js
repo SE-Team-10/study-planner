@@ -41,11 +41,7 @@ class Upload extends Component {
   };
 
   onFileDownload = async () => {
-    //Request file with the name of currently logged in user
-    await fetch('http://localhost:5000/api-download/'+this.state.currentUser, {
-    responseType: 'blob',})
-    //Prompt download of recieved file
-    .then((res) => {fileDownload(res.data, this.state.currentUser+".json")})
+    window.open('http://localhost:5000/api-download/');
   };
 
   // File content to be displayed after

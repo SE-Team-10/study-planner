@@ -40,8 +40,9 @@ class Navbar extends Component {
               <div className="profile-pic" style={{backgroundImage: `url(/profile.png)`}}></div>
               <div className="account-menu">
               <ul>
-                  <li><Link to="/settings">Settings</Link></li>
-                  <li><Link to="#">Log out</Link></li>
+
+                  <li><Link to="#">Settings</Link></li>
+                  <li><Link to="#" onClick={() => window.location.reload()}>Log out</Link></li>
               </ul>
               </div>
             </div>
