@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="Progress now work for each user's file">
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_2022,_04_01_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_2022__04_01__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/Notes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/assignment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/tasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Module/Notes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Module/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Module/module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Module/note.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Module/overview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Module/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/notes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/task.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/ModuleCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ModuleCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/note.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/note.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/var.scss" afterDir="false" />
+    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="CRUD on tasks now work">
+      <change beforePath="$PROJECT_DIR$/server/routes/notes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/userData/Bob.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/userData/Bob.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/userData/admin.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/userData/admin.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +114,7 @@
       <workItem from="1652089626935" duration="5977000" />
       <workItem from="1652101578644" duration="27042000" />
       <workItem from="1652357385572" duration="2306000" />
-      <workItem from="1652392488548" duration="20802000" />
+      <workItem from="1652392488548" duration="21102000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
@@ -208,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652102344462</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="CRUD on tasks now work">
+      <created>1652551632560</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652551632560</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +221,7 @@
     <MESSAGE value="Dashboard: Filter deadlines by dropdown&#10;Server: Filter deadlines api, tidied notes CRUD" />
     <MESSAGE value="Dashboard: ules listed&#10;Modules: Created (Linked from dashboard and assignment)" />
     <MESSAGE value="Progress now work for each user's file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progress now work for each user's file" />
+    <MESSAGE value="CRUD on tasks now work" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD on tasks now work" />
   </component>
 </project>

@@ -349,7 +349,4 @@ app.get('/api-download/:user', (req, res) => {
   };
 });
 
-const test = require('./routes/test.js')
-
-app.use('/',test)
 
