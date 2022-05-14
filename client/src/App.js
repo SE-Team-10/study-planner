@@ -149,7 +149,7 @@ class App extends React.Component {
     return (
 
       <div className="content">
-        <div style={{display: this.state.isNew ? 'block' : 'none' }} className="overlay">
+        <div style={{display: this.state.isNew ? 'block' : 'none' }} className="overlay-pop">
           <div className="logbox">
             <p className="brand">Study Planner</p>
             <div className="form">

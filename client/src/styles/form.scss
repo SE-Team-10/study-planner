@@ -1,6 +1,6 @@
 @use 'var';
 
-.overlay {
+.overlay-pop {
         position: absolute;
         display: none;
         top: 0;
@@ -10,22 +10,6 @@
         background: rgba(0, 0, 0, 0.8);
         z-index: 2;
       }
-.popup {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        top: 25%;
-        left: 25%;
-        text-align: center;
-        background: white;
-      }
-.popup h3 {
-  font-size: 15px;
-  height: 50px;
-  line-height: 50px;
-  color: #fff;
-  background: white;
-}
 
 button{
   background-color: var.$brand-color-1;
@@ -97,4 +81,3 @@ input[type="date"] {
 
   }
 }
-
