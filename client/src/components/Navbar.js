@@ -29,7 +29,7 @@ class Navbar extends Component {
                 <NavLink to={{pathname: "/chart", state: {sentUser: this.state.currentUser},}}>Gantt Chart</NavLink>
               </li>
               <li>
-                <NavLink to={{pathname: "/addnew", state: {sentUser: this.state.currentUser},}}>Add New</NavLink>
+                <NavLink to={{pathname: "/study-activity", state: {sentUser: this.state.currentUser},}}>Study Activity</NavLink>
               </li>
               <li>
                 <NavLink to={{pathname: "/upload", state: {sentUser: this.state.currentUser},}}>Upload File</NavLink>

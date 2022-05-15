@@ -4,7 +4,7 @@ import axios from 'axios';
 import "./Login.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
-import AddNew from "./components/pages/addnew";
+import StudyActivity from "./components/pages/Study Activity/StudyActivity";
 import { BrowserRouter as Router, Switch, Route, useHistory} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -171,7 +171,7 @@ class App extends React.Component {
             <Switch>
               <Route path="/" exact component={Dashboard} />
               <Route path="/chart" exact component={GanttChart} />
-              <Route path="/addnew" exact component={AddNew} />
+              <Route path="/study-activity" exact component={StudyActivity} />
               <Route path="/upload" exact component={Upload} />
               <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
               <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
