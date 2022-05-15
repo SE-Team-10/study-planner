@@ -64,14 +64,14 @@ function Task({text, taskID, assignmentID, actualStart, actualEnd, progressValue
                     <RadialProgress percentage={parseInt(progressValue)}/>
                     <div className="note-header">
                         <span className="note-info-text">
-                            Start: <input onChange={updateStartDate} required type="date" id="start" name="task-start" value={taskActualStart}/></span>
+                            Start: <input onChange={updateStartDate} className="task-date-input" required type="date" id="start" name="task-start" value={taskActualStart}/></span>
                         <span className="note-info-text">
-                            End: <input onChange={updateEndDate} min={actualStart} required type="date" id="end" name="task-end" value={taskActualEnd}/>
+                            End: <input onChange={updateEndDate} className="task-date-input" min={actualStart} required type="date" id="end" name="task-end" value={taskActualEnd}/>
                         </span>
 
                         <span className="note-info-text">
                             Type:
-                            <input onChange={updateStudyType} placeholder="Enter Study Type" className="study-type-input" type="text" list="study" value={studyType} />
+                            <input onChange={updateStudyType} placeholder="Enter Study Type" className="study-type-input" type="text" list="study" value={taskStudyType} />
                             <datalist id="study">
                                 <option>Reading</option>
                                 <option>Coding</option>
