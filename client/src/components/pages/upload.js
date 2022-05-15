@@ -37,7 +37,8 @@ class Upload extends Component {
     .then(res => {
         console.log(res);
         console.log(res.data);
-      });
+      })
+    .then(fetch('http://localhost:5000/forceUpdate'));
   };
 
   onFileDownload = async () => {
@@ -65,7 +66,7 @@ class Upload extends Component {
       return (
         <div>
           <br />
-          <p>Choose file before pressing the uploading</p>
+          <p>Choose file before pressing upload!</p>
         </div>
       );
     }

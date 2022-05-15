@@ -97,6 +97,12 @@ input[type="submit"] {
   padding: 6px 135px;
 }
 
+input[type="file"] {
+  margin-top: 100px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
 input[type="submit"]:hover {
   background-color: #274EE5;
   border: 2px solid #274EE5;
@@ -132,6 +138,14 @@ input[type="submit"]:active {
 
 .input-container > label {
   padding-bottom: 5px;
+}
+
+.input-container > button {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .hide {

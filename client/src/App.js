@@ -5,7 +5,7 @@ import "./Login.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
 import StudyActivity from "./components/pages/Study Activity/StudyActivity";
-import { BrowserRouter as Router, Switch, Route, useHistory} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {Helmet} from "react-helmet";
@@ -14,8 +14,10 @@ import "./styles/form.scss"
 import Assignment from "./components/pages/Assignment/assignment";
 import Module from "./components/pages/Module/module";
 import Settings from "./components/pages/settings";
+import { createBrowserHistory } from "history";
 
 var tempError = null;
+
 
 class App extends React.Component {
 
@@ -63,8 +65,6 @@ class App extends React.Component {
       })
     .then(this.setState({isNew: false}));
     await fetch('http://localhost:5000/forceUpdate');
-    let history = useHistory();
-    history.push('/');
     this.forceUpdate();
   };
   // fetching the GET route from the Express server which matches the GET route from server.js
@@ -125,8 +125,6 @@ class App extends React.Component {
                     <option> Select your Semester: </option>
                     <option> Semester 1</option>
                     <option> Semester 2</option>
-                    <option> Semester 3</option>
-                    <option> Semester 4</option>
                   </select>
                   {this.renderErrorMessage("semester")}
                 </div>
@@ -152,7 +150,6 @@ class App extends React.Component {
   home = (user) => {
     console.log("currentUser: "+user);
     return (
-
       <div className="content">
         <div style={{display: this.state.isNew ? 'block' : 'none' }} className="overlay-pop">
           <div className="logbox">

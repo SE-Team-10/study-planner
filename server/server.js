@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 
 app.use(busboy());
 
-updataData = (user) => {
+updateData = (user) => {
   return new Promise((resolve, reject) => {
     fs.readFile(`./userData/${user}.json`, 'utf-8', (err, contents) => {
       if (err) {
@@ -85,6 +85,7 @@ dynamicData = (data) => {
         data.totalSemesterProgress += data.moduleEvents[i].totalProgressValue;
     }
     data.totalSemesterProgress = Math.round(data.totalSemesterProgress / data.moduleEvents.length);
+    console.log("data updated");
     return data;
 }
 
@@ -346,7 +347,7 @@ app.post('/checkUser',jsonParser ,async function(req, res){
     } else {
       console.log("success "+userData.userName+" is logged in");
       currentUser = userData.userName;
-      const newUser = await updataData(currentUser);
+      const newUser = await updateData(currentUser);
       console.log(newUser)
       if (newUser){
         res.json({code: 200, name: userData.userName, new: true});
@@ -360,7 +361,7 @@ app.post('/checkUser',jsonParser ,async function(req, res){
   }
 });
 
-app.post('/api-upload', (req, res) => {
+app.post('/api-upload', async function(req, res){
  req.busboy.on('file', function (fieldname, file, filename) {
    console.log(filename);
    var fstream = fs.createWriteStream('./userData/' + filename.filename);
@@ -369,7 +370,9 @@ app.post('/api-upload', (req, res) => {
      res.send('upload succeeded!');
    });
  });
+ await updateData(currentUser);
  req.pipe(req.busboy);
+
 });
 
 app.get('/api-download', (req, res) => {
@@ -386,7 +389,7 @@ app.get('/api-download', (req, res) => {
 });
 
 app.get("/forceUpdate", async function(req, res){
-  await updataData(currentUser);
+  await updateData(currentUser);
   console.log("forced update");
   res.send("Updated");
 })
