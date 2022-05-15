@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 var currentUser = "admin";
 let accountData = require('./accountData.json');
-//let data = require('./userData/admin.json');
+let data = require('./userData/admin.json');
 
 const errors = {
   semester: "Incorrect Semester",
@@ -351,8 +351,10 @@ app.post('/checkUser',jsonParser ,async function(req, res){
       const newUser = await updateData(currentUser);
       console.log(newUser)
       if (newUser){
+        //new user logged in
         res.json({code: 200, name: userData.userName, new: true});
       }else{
+        //existing user logged in
         res.json({code: 200, name: userData.userName, new: false});
       }
     }
@@ -373,7 +375,6 @@ app.post('/api-upload', (req, res) => {
  });
  updateData(currentUser);
  req.pipe(req.busboy);
-
 });
 
 app.get('/api-download', (req, res) => {
@@ -390,13 +391,19 @@ app.get('/api-download', (req, res) => {
 });
 
 app.get("/forceUpdate", async function(req, res){
+  if (fs.existsSync(`./userData/${currentUser}.json`) && (data !== null) && (data)){
+    const tempData = JSON.stringify(data)
+    fs.writeFile(`./userData/${currentUser}.json`, tempData, (err) => {
+      if (err){
+        throw err;
+      }
+    });
+  };
   await updateData(currentUser);
-  console.log("forced update");
   res.send("Updated");
 })
 
 app.get("/clearData", (req, res) => {
-  data = {};
-  console.log("data cleared");
+  data = null;
   res.send("Cleared");
 })

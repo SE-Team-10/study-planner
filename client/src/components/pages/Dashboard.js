@@ -12,9 +12,12 @@ class Dashboard extends Component{
             semesterInfo:[],
             modules:[]
         }
+
     }
 
     componentDidMount(){
+        fetch('http://localhost:5000/forceUpdate');
+        
         fetch('/api/module-events/upcoming')
             .then(r => r.json())
             .then(moduleEvents => this.setState({moduleEvents}))

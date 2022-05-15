@@ -8,6 +8,10 @@ class StudyActivity extends Component{
     super();
   }
 
+  componentDidMount() {
+    fetch('http://localhost:5000/forceUpdate');
+  }
+
 
 render()
 {
