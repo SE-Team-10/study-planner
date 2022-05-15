@@ -34,6 +34,13 @@ class Navbar extends Component {
               <li>
                 <NavLink to={{pathname: "/upload", state: {sentUser: this.state.currentUser},}}>Upload File</NavLink>
               </li>
+
+              <li className="mobile-only">
+                <NavLink to={{pathname: "/settings", state: {sentUser: this.state.currentUser},}}>Settings</NavLink>
+              </li>
+              <li className="mobile-only">
+                <NavLink onClick={() => window.location.reload()} to={{pathname: "#", state: {sentUser: this.state.currentUser},}}>Log out</NavLink>
+              </li>
             </ul>
             <div className="navbar-account">
               <span className="username">{this.state.currentUser}</span>
