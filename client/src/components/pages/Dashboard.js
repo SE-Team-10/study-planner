@@ -41,11 +41,12 @@ class Dashboard extends Component{
                 <div className="dashboard-item">
                     <h2>Modules</h2>
                     <div className="module-cards">
-                        {this.state.modules.map((module, idx) => (
+                        {this.state.modules.map((module, ) => (
+                            <div key={module.id}>
                             <Link to={"/module/"+module.name}>
-
-                                <ModuleCard key={idx} name={module.name} code={module.code}/>
+                                <ModuleCard name={module.name} code={module.code}/>
                             </Link>
+                            </div>
                         )).flat()}
                     </div>
                 </div>
@@ -61,11 +62,12 @@ class Dashboard extends Component{
                         <option value="uncompleted">Uncompleted</option>
                     </select>
                     <div className="cardGroup">
-                        {this.state.moduleEvents.map((moduleEvent, idx) => (
+                        {this.state.moduleEvents.map((moduleEvent) => (
+                            <div key={moduleEvent.id}>
                             <Link to={"/assignment/"+moduleEvent.id}>
-
-                                <DeadlineCard key={idx} name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
+                                <DeadlineCard name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
                             </Link>
+                            </div>
                         )).flat()}
                     </div>
                 </div>

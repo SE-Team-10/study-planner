@@ -18,7 +18,7 @@ render()
 {
   return (
       <>
-        <table>
+        <table className="study-activity-table">
             <tr>
             <th>Study Activity ID</th>
             <th>Date</th>
