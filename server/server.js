@@ -51,18 +51,24 @@ dynamicData = (data) => {
 
     for (let i in data.moduleEvents) {
         if (data.moduleEvents[i].hasOwnProperty('tasks')) {
-            data.moduleEvents[i].totalTasks = data.moduleEvents[i].tasks.length;
-            let count = 0;
-            for (let x in data.moduleEvents[i].tasks) {
+            if (data.moduleEvents[i].tasks.length === 0){
+                data.moduleEvents[i].totalTasks = 0;
+                data.moduleEvents[i].tasksCompleted = 0;
                 data.moduleEvents[i].totalProgressValue = 0;
-                for (let m in data.moduleEvents[i].tasks) {
-                    data.moduleEvents[i].totalProgressValue += parseInt(data.moduleEvents[i].tasks[m].progressValue);
+            } else {
+                data.moduleEvents[i].totalTasks = data.moduleEvents[i].tasks.length;
+                let count = 0;
+                for (let x in data.moduleEvents[i].tasks) {
+                    data.moduleEvents[i].totalProgressValue = 0;
+                    for (let m in data.moduleEvents[i].tasks) {
+                        data.moduleEvents[i].totalProgressValue += parseInt(data.moduleEvents[i].tasks[m].progressValue);
+                    }
+                    data.moduleEvents[i].totalProgressValue = Math.round(data.moduleEvents[i].totalProgressValue / data.moduleEvents[i].tasks.length);
+                    if (data.moduleEvents[i].tasks[x].progressValue === "100%") {
+                        count = count + 1;
+                    }
+                    data.moduleEvents[i].tasksCompleted = count;
                 }
-                data.moduleEvents[i].totalProgressValue = Math.round(data.moduleEvents[i].totalProgressValue / data.moduleEvents[i].tasks.length);
-                if (data.moduleEvents[i].tasks[x].progressValue === "100%") {
-                    count = count + 1;
-                }
-                data.moduleEvents[i].tasksCompleted = count;
             }
         } else {
             data.moduleEvents[i].totalTasks = 0;
@@ -84,7 +90,6 @@ dynamicData = (data) => {
 
 //send message from api to react app (client) that express is connected
 app.get("/api", (req, res) => {
-  //res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
   res.header("Content-Type",'application/json');
   res.send(data);
 });
@@ -302,6 +307,28 @@ app.post("/api/module-event/:meID/task/", (req,res) => {
     res.json(data.moduleEvents[moduleEventIndex].tasks);
 })
 
+app.post("/api/study-activity", (req,res) =>{
+    const newStudyActivity = req.body;
+    newStudyActivity.id = shortid.generate();
+
+
+
+    for (let m in data.moduleEvents){
+        for (let x in data.moduleEvents[m].tasks){
+            if (data.moduleEvents[m].tasks[x].id === newStudyActivity.taskID){
+                data.moduleEvents[m].tasks[x].progressValue = newStudyActivity.taskProgressValue + "%";
+            }
+        }
+    }
+
+    data.studyActivities.push(newStudyActivity)
+    data = dynamicData(data);
+    res.json(data.studyActivities)
+})
+
+app.get("/api/study-activity", (req,res) =>{
+    res.json(data.studyActivities)
+})
 
 
 

@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="CRUD on tasks now work">
-      <change beforePath="$PROJECT_DIR$/server/routes/notes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/test.js" beforeDir="false" />
+    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="small change">
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/AddNew.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/FullList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/StudyActivity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/StudyActivity.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Assignment/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Assignment/Task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/addnew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/note.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/note.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/userData/admin.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/userData/admin.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +40,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,34 +56,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/eddie/Documents/study-planner/client/src/components/pages",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/eddie/Documents/study-planner/client/src/components/pages/Study Activity&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/pages/Study Activity" />
+      <recent name="$PROJECT_DIR$/client/src/styles" />
       <recent name="$PROJECT_DIR$/client/src/components/pages" />
       <recent name="$PROJECT_DIR$/client/src/components/pages/Module" />
       <recent name="$PROJECT_DIR$/client/src/components" />
-      <recent name="$PROJECT_DIR$/client/src/styles" />
-      <recent name="$PROJECT_DIR$/client/src/components/pages/Assignment" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/pages/Study Activity" />
       <recent name="$PROJECT_DIR$/client/src/components/pages/Assignment" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/client/src/styles" />
       <recent name="$PROJECT_DIR$/client/src/data" />
-      <recent name="$PROJECT_DIR$/client/public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -114,7 +123,10 @@
       <workItem from="1652089626935" duration="5977000" />
       <workItem from="1652101578644" duration="27042000" />
       <workItem from="1652357385572" duration="2306000" />
-      <workItem from="1652392488548" duration="21102000" />
+      <workItem from="1652392488548" duration="24304000" />
+      <workItem from="1652557247089" duration="18611000" />
+      <workItem from="1652579400747" duration="39000" />
+      <workItem from="1652579474777" duration="793000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
@@ -193,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652551632560</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="small change">
+      <created>1652551801649</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652551801649</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +241,7 @@
     <MESSAGE value="Dashboard: ules listed&#10;Modules: Created (Linked from dashboard and assignment)" />
     <MESSAGE value="Progress now work for each user's file" />
     <MESSAGE value="CRUD on tasks now work" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD on tasks now work" />
+    <MESSAGE value="small change" />
+    <option name="LAST_COMMIT_MESSAGE" value="small change" />
   </component>
 </project>
