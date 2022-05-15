@@ -358,10 +358,14 @@ app.get('/api-download', (req, res) => {
   };
 });
 
-
 app.get("/forceUpdate", async function(req, res){
   await updataData(currentUser);
   console.log("forced update");
-  res.send("Updated")
+  res.send("Updated");
 })
 
+app.get("/clearData", (req, res) => {
+  data = {};
+  console.log("data cleared");
+  res.send("Cleared");
+})

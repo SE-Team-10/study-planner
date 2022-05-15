@@ -107,9 +107,14 @@ class App extends React.Component {
     }
   };
 
+  clearData = () => {
+    fetch('http://localhost:5000/clearData');
+  }
+
   renderForm = () => {
     return (
         <div className="bg">
+        {this.clearData()}
           <div className="logbox">
             <p className="brand">Study Planner</p>
             <div className="form">
