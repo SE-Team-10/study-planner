@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="Responsive: Slight changes to navbar">
+    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="small tweaks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DeadlineCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DeadlineCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Study Activity/AddNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/AddNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +117,7 @@
       <workItem from="1652557247089" duration="18611000" />
       <workItem from="1652579400747" duration="39000" />
       <workItem from="1652579474777" duration="1861000" />
-      <workItem from="1652617487672" duration="21887000" />
+      <workItem from="1652617487672" duration="22132000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
@@ -233,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652637364261</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="small tweaks">
+      <created>1652640921683</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1652640921683</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +272,7 @@
     <MESSAGE value="Study Activity - Styling added - Empty input check implemented" />
     <MESSAGE value="Settings: Dark mode, themes" />
     <MESSAGE value="Responsive: Slight changes to navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Responsive: Slight changes to navbar" />
+    <MESSAGE value="small tweaks" />
+    <option name="LAST_COMMIT_MESSAGE" value="small tweaks" />
   </component>
 </project>
