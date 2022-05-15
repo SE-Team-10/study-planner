@@ -362,7 +362,7 @@ app.post('/checkUser',jsonParser ,async function(req, res){
   }
 });
 
-app.post('/api-upload', async function(req, res){
+app.post('/api-upload', (req, res) => {
  req.busboy.on('file', function (fieldname, file, filename) {
    console.log(filename);
    var fstream = fs.createWriteStream('./userData/' + filename.filename);
@@ -371,7 +371,7 @@ app.post('/api-upload', async function(req, res){
      res.send('upload succeeded!');
    });
  });
- await updateData(currentUser);
+ updateData(currentUser);
  req.pipe(req.busboy);
 
 });

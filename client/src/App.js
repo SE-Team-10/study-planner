@@ -159,7 +159,7 @@ class App extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="input-container">
                   <input type="file" onChange={this.onFileChange} accept=".json"/>
-                    <button onClick={this.onFileUpload}>Upload!</button>
+                  <button onClick={this.onFileUpload}>Upload!</button>
                 </div>
               </form>
             </div>
