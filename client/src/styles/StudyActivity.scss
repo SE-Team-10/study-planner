@@ -1,5 +1,43 @@
 @use 'var';
 
-.task-selector{
+.add-new-form{
+  max-width: 400px;
+  background-color: var(--bg1);
+  display: flow-root;
+  padding: 2em;
+  margin-top: 1em;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
 
+.add-new-form label, .add-new-form button{
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+}
+
+.add-new-form label{
+  display: block;
+}
+
+.add-new-form button{
+  float: right;
+}
+
+.add-new-form input, .add-new-form select{
+  width: auto;
+}
+
+#taskProgressValue{
+  width: 70px;
+}
+
+.study-activity-table{
+  margin-top: 1em;
+}
+
+#add-new-form-error{
+  color: var(--error);
+  float: left;
+  padding-top: 1.5em;
 }

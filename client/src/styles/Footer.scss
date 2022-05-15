@@ -2,8 +2,8 @@
 
 div.footer{
     padding: 1em;
-    border-top: 1px solid var.$border;
+    border-top: 1px solid var(--border);
     margin-top: 1em;
     font-size: 0.7em;
-    color: var.$text-color-2;
+    color: var(--text-color-2);
 }

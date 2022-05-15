@@ -12,7 +12,7 @@
 
 .percentage-text{
   font-size: 1em;
-  color: var.$brand-color-1;
+  color: var(--theme-primary);
   font-family: var.$header-font;
 
   position: absolute;
@@ -22,6 +22,6 @@
   .percent-symbol{
     font-family: "Inter", sans-serif;
     font-size: 0.6em;
-    color: var.$text-color-2;
+    color: var(--text-color-2);
   }
 }

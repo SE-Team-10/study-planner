@@ -73,11 +73,12 @@ class Module extends Component {
                                 <div className="content">
                                 <TabPanel key={1}>
                                     <div className="cardList">
-                                        {this.state.moduleEvents.map((moduleEvent, idx) => (
+                                        {this.state.moduleEvents.map((moduleEvent) => (
+                                            <div key={moduleEvent.id}>
                                             <Link to={"/assignment/"+moduleEvent.id}>
-
-                                                <DeadlineCard key={idx} name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
+                                                <DeadlineCard name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
                                             </Link>
+                                            </div>
                                         )).flat()}
                                     </div>
                                 </TabPanel>

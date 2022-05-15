@@ -13,8 +13,9 @@ render()
 {
   return (
       <div className="container">
+        <h1>Study Activity</h1>
         <Tabs>
-          <TabList className="tabs">
+          <TabList className="tabs tabs-full-page">
             <Tab key={1}><a>Add New</a></Tab>
             <Tab key={2}><a>View All</a></Tab>
           </TabList>
