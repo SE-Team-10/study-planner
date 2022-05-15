@@ -184,9 +184,9 @@ class App extends React.Component {
 
   render() {
     return (
-        <body>
+        <div>
         {this.state.isSubmitted ? this.home(this.state.currentUser) : this.renderForm()}
-        </body>
+        </div>
     );}
 }
 
