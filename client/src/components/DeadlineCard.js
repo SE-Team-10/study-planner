@@ -3,7 +3,7 @@ import "../styles/ModuleCard.scss";
 
 
 const DeadlineCard = (props) => {
-    const { name, txcolor, actualEnd, module, type, completed, children } = props;
+    const { name, actualEnd, module, type, completed } = props;
 
     const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
     var utcDate = new Date(actualEnd);
@@ -12,10 +12,11 @@ const DeadlineCard = (props) => {
     var day = utcDate.getDate();
 
 
+
   return (
     <div className="card">
         <div className="cardFlex">
-          <div className="date" style={{color:`${txcolor}`}}>
+          <div className="date">
               <div className="day">{day}</div>
               <div className="month">{month}</div>
           </div>

@@ -4,9 +4,9 @@
 
 .navbar {
   overflow: hidden;
-  border-bottom: 1px solid var.$border;
+  border-bottom: 1px solid var(--border);
   //box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.3);
-  background-color: var.$bg1;
+  background-color: var(--bg1);
   ul {
     list-style-type: none;
     margin: 0;
@@ -19,7 +19,7 @@
     display: inline-block;
     a {
       display: inline-block;
-      color: var.$brand-color-1;
+      color: var(--theme-primary);
       text-align: center;
       padding: 1.25em;
       margin: 0.5em;
@@ -33,7 +33,7 @@
       border-radius: 6px;
       font-weight: 600;
       &:hover {
-        background-color: var.$bg1;
+        background-color: var(--bg1);
         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
       }
 
@@ -51,7 +51,7 @@
   padding: 0.4em 0.75em 0.4em 0;
   float: left;
   font-family: var.$brand-font;
-  background: linear-gradient(var.$brand-color-2, var.$brand-color-1);
+  background: linear-gradient(to bottom, var(--theme-secondary), var(--theme-primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
@@ -64,13 +64,13 @@
 }
 
 .navbar li a.active{
-  color: var.$bg1;
-  background-color: var.$brand-color-1;
+  color: var(--bg1);
+  background-color: var(--theme-primary);
 }
 
 .navbar li a.inactive{
-  color: var.$brand-color-1 !important;
-  background-color: var.$bg1 !important;
+  color: var(--theme-primary) !important;
+  background-color: var(--bg1) !important;
 }
 
 .navbar-account{
@@ -80,20 +80,20 @@
   .username{
     font-size: 0.8em;
     padding-right: 0.5em;
-    color: var.$brand-color-1;
+    color: var(--theme-primary);
     min-width: 10em;
     text-align: right;
   }
   .account-menu{
     display:none;
-    background: var.$bg1;
+    background: var(--bg1);
     position:absolute;
     top:55px;
     padding:1em;
     border-radius:0 0 6px 6px;
-    border-bottom: var.$border solid 1px;
-    border-left: var.$border solid 1px;
-    border-right: var.$border solid 1px;
+    border-bottom: var(--border) solid 1px;
+    border-left: var(--border) solid 1px;
+    border-right: var(--border) solid 1px;
     //transform: translate(50%,0);
     float: right;
     z-index: 1;
@@ -110,16 +110,16 @@
     }
 
     .profile-pic{
-      border: 2px solid var.$brand-color-1;
+      border: 2px solid var(--theme-primary);
     }
   }
 }
 
 .profile-pic{
-  border: 2px solid var.$border;
+  border: 2px solid var(--border);
   height: 40px;
   width: 40px;
-  background-color: var.$border;
+  background-color: var(--border);
   border-radius: 100%;
   margin: 6px 0px;
   background-position: center;
@@ -128,17 +128,25 @@
 
 }
 
-@media only screen and (max-width: var.$mobile-width) {
+.mobile-only{
+  display: none !important;
+}
+
+@media only screen and (max-width: 1080px) {
   /* For mobile phones: */
   .desktop-brand {
     display: none;
   }
-  .mobile-brand{
+  .mobile-brand {
     margin-right: 0;
   }
+}
+
+@media only screen and (max-width: 820px) {
+  /* Tablets and smartphones: */
 
   .mobile-only{
-    display: block;
+    display: inline-block !important;
   }
 
   .navbar-account{

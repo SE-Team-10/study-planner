@@ -42,7 +42,26 @@ $brand-font: "Gilroy Heavy","Inter","Helvetica", sans-serif;
 //Responsive Sizes
 $mobile-width: 620px;
 
+:root{
+  --theme-primary: rgb(0,122,255);
+  --theme-secondary: #6b2cff;
+
+
+
+  --bg1: #fff;
+  --bg2: #f8f8f8;
+  --bg3: #e7e7e7;
+
+  --text-color: #333;
+  --text-color-2: #aaa;
+
+  --border: #e7e7e7;
+
+  --error: rgb(255,59,48);
+}
+
 
 :export {
   primaryColor: $brand-color-1;
+
 }
