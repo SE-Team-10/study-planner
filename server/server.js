@@ -85,6 +85,8 @@ dynamicData = (data) => {
         data.totalSemesterProgress += data.moduleEvents[i].totalProgressValue;
     }
     data.totalSemesterProgress = Math.round(data.totalSemesterProgress / data.moduleEvents.length);
+
+    data.moduleEvents.sort((a, b) =>  new Date(a.actualEnd) - new Date(b.actualEnd));
     return data;
 }
 
@@ -316,7 +318,7 @@ app.post("/api/study-activity", (req,res) =>{
     for (let m in data.moduleEvents){
         for (let x in data.moduleEvents[m].tasks){
             if (data.moduleEvents[m].tasks[x].id === newStudyActivity.taskID){
-                data.moduleEvents[m].tasks[x].progressValue = newStudyActivity.taskProgressValue + "%";
+                data.moduleEvents[m].tasks[x].progressValue = (newStudyActivity.taskProgressValue % 100) + "%";
             }
         }
     }

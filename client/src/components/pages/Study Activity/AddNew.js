@@ -30,6 +30,9 @@ class AddNew extends Component{
       } else if(!document.getElementById("taskProgressValue").value){
           document.getElementById("taskProgressValue").style.border=('1px solid red');
           document.getElementById("add-new-form-error").innerHTML = "All fields required";
+      } else if(document.getElementById("taskProgressValue").value > 100) {
+          document.getElementById("taskProgressValue").style.border = ('1px solid red');
+          document.getElementById("add-new-form-error").innerHTML = "Progress cannot be greater than 100";
       } else{
           fetch('/api/study-activity/', {
               method:'POST',
@@ -50,7 +53,7 @@ render()
       <div className="add-new-form">
         <div>
           <label>Task: </label>
-          <select id="tasksList">
+          <select required id="tasksList">
               <option value="" disabled selected>Select task</option>
             {this.state.moduleEvents.map((item) => (
                 <optgroup label={item.name}>
@@ -64,23 +67,23 @@ render()
 
         <div>
           <label>Date: </label>
-          <input id="date" type="date"/>
+          <input required id="date" type="date"/>
         </div>
 
 
         <div>
           <label>Start Time: </label>
-          <input id="startTime" type="time"/>
+          <input required id="startTime" type="time"/>
         </div>
 
         <div>
           <label>End Time: </label>
-          <input id="endTime" type="time"/>
+          <input required id="endTime" type="time"/>
         </div>
 
         <div>
           <label>Progress: </label>
-          <input id="taskProgressValue" type="number" min="10" max="100"/>
+          <input required id="taskProgressValue" type="number" pattern="[1-100]"/>
         </div>
 
           <div id="add-new-form-error"></div>

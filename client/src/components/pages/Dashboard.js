@@ -65,7 +65,7 @@ class Dashboard extends Component{
                         {this.state.moduleEvents.map((moduleEvent) => (
                             <div key={moduleEvent.id}>
                             <Link to={"/assignment/"+moduleEvent.id}>
-                                <DeadlineCard name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
+                                <DeadlineCard id={moduleEvent.id} name={moduleEvent.name} module={moduleEvent.moduleName} completed={moduleEvent.totalProgressValue + "%"} type={moduleEvent.type} actualEnd={moduleEvent.actualEnd}/>
                             </Link>
                             </div>
                         )).flat()}
