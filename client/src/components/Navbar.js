@@ -41,7 +41,7 @@ class Navbar extends Component {
               <div className="account-menu">
               <ul>
 
-                  <li><Link to="#">Settings</Link></li>
+                  <li><Link to="/settings">Settings</Link></li>
                   <li><Link to="#" onClick={() => window.location.reload()}>Log out</Link></li>
               </ul>
               </div>

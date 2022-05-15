@@ -19,7 +19,7 @@ div.overlay{
     flex-flow: column;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     //border: 1px solid #e7e7e7;
-    background-color: var.$bg2;
+    background-color: var(--bg2);
     border-radius: 6px;
     z-index: 2;
     position: fixed;
@@ -30,7 +30,7 @@ div.overlay{
     max-width:666px;
     height: 80vh;
     .hero{
-        background-color: var.$brand-color-1;
+        background-color: var(--theme-primary);
         //background-image:
         //        radial-gradient(at 94% 14%, hsla(257,100%,58%,1) 0px, transparent 50%),
         //        radial-gradient(at 33% 12%, hsla(227,100%,58%,1) 0px, transparent 50%),
@@ -66,10 +66,10 @@ div.overlay{
     }
     .header{
         flex: 0 1 auto;
-        //border-bottom: 1px solid var.$border;
+        //border-bottom: 1px solid var(--border);
         margin: 0;
         padding: 2em 2em 0 2em;
-        background-color: var.$bg1;
+        background-color: var(--bg1);
         border-radius: 6px 6px 0 0;
         h2{
             display: inline-block;
@@ -79,12 +79,12 @@ div.overlay{
         flex: 1 1 auto;
         padding: 2em;
         overflow: scroll;
-        //background-color: var.$bg2;
+        //background-color: var(--bg2);
     }
     .close{
         float:right;
         cursor: pointer;
-        color: var.$brand-color-1;
+        color: var(--theme-primary);
         &:hover{
             filter: brightness(1.1);
         }
@@ -96,12 +96,12 @@ div.overlay{
         }
     }
     .modal-footer{
-        border-top: 1px solid var.$border;
+        border-top: 1px solid var(--border);
         margin: 0;
         padding: 0;
         position: absolute;
         bottom: 0;
-        background-color: var.$bg1;
+        background-color: var(--bg1);
         border-radius: 0 0 6px 5px;
         width: 100%;
         .modal-footer-content{
@@ -130,7 +130,7 @@ div.overlay{
 }
 
 .tabs{
-    background-color: var.$bg1;
+    background-color: var(--bg1);
 }
 
 @media only screen and (max-width: var.$mobile-width) {

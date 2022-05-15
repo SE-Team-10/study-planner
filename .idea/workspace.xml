@@ -4,17 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="Study Activity All uploads and changes progress on semester and task. still need to do input check">
+    <list default="true" id="1041f7d9-5697-43ed-9b8e-7e656520f866" name="Changes" comment="Study Activity - Styling added - Empty input check implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Module/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Module/module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Study Activity/AddNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/AddNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Study Activity/FullList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/FullList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Study Activity/StudyActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Study Activity/StudyActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/RadialProgress.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/RadialProgress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SemesterProgress.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SemesterProgress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/DeadlineCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/ModuleCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ModuleCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/RadialProgress.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/SemesterProgress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/SemesterProgress.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/StudyActivity.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/StudyActivity.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/note.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/note.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/var.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/userData/Bob.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/userData/admin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/userData/undefined.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +136,7 @@
       <workItem from="1652557247089" duration="18611000" />
       <workItem from="1652579400747" duration="39000" />
       <workItem from="1652579474777" duration="1861000" />
-      <workItem from="1652617487672" duration="5060000" />
+      <workItem from="1652617487672" duration="16561000" />
     </task>
     <task id="LOCAL-00001" summary="corrected splelling mitsakes">
       <created>1647288437491</created>
@@ -217,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652580467503</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Study Activity - Styling added - Empty input check implemented">
+      <created>1652622640639</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652622640639</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +267,7 @@
     <MESSAGE value="CRUD on tasks now work" />
     <MESSAGE value="small change" />
     <MESSAGE value="Study Activity All uploads and changes progress on semester and task. still need to do input check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Study Activity All uploads and changes progress on semester and task. still need to do input check" />
+    <MESSAGE value="Study Activity - Styling added - Empty input check implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Study Activity - Styling added - Empty input check implemented" />
   </component>
 </project>

@@ -5,10 +5,9 @@ import "./Login.css";
 import Dashboard from "./components/pages/Dashboard";
 import GanttChart from "./components/pages/chart";
 import StudyActivity from "./components/pages/Study Activity/StudyActivity";
-import { BrowserRouter as Router, Switch, Route, useHistory} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, useHistory, Link} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import {Helmet} from "react-helmet";
 import Upload from "./components/pages/upload";
 import "./styles/form.scss"
 import Assignment from "./components/pages/Assignment/assignment";
@@ -158,7 +157,7 @@ class App extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="input-container">
                   <input type="file" onChange={this.onFileChange} accept=".json"/>
-                  <button onClick={this.onFileUpload}>Upload!</button>
+                    <button onClick={this.onFileUpload}>Upload!</button>
                 </div>
               </form>
             </div>
@@ -175,6 +174,7 @@ class App extends React.Component {
               <Route path="/upload" exact component={Upload} />
               <Route path={"/assignment/:id/"}><Dashboard/><Assignment /></Route>
               <Route path={"/module/:name/"}><Dashboard/><Module /></Route>
+              <Route path={"/settings"}><Settings/></Route>
             </Switch>
           </div>
         </Router>

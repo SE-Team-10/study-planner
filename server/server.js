@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 var currentUser = "admin";
 let accountData = require('./accountData.json');
-let data = require('./userData/admin.json');
+//let data = require('./userData/admin.json');
 
 const errors = {
   semester: "Incorrect Semester",

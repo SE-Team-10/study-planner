@@ -3,17 +3,17 @@
 .progressBar{
   height: 2em;
   width: 100%;
-  background-color: var.$bg3;
+  background-color: var(--bg3);
   border-radius: 50px;
   .fill{
     height: 100%;
-    background: linear-gradient(to right, var.$brand-color-2, var.$brand-color-1);
+    background: linear-gradient(to right, var(--theme-secondary), var(--theme-primary));
     text-align: right;
     border-radius: inherit;
     width: 0%;
     transition: width 0.5s;
     .label{
-      margin: 0.5em;
+      padding: 0.5em;
       color: #fff;
       font-weight: 600;
       font-size: 1.3em;

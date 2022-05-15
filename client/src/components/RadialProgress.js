@@ -49,7 +49,7 @@ const RadialProgress = ({ percentage, colour }) => {
             <svg width="100%" viewBox="0 0 200 200">
                 <g transform={`rotate(-90 ${"100 100"})`}>
                     <Circle colour="rgba(255,255,255,0.1)" />
-                    <Circle colour={variables.primaryColor} pct={pct} />
+                    <Circle colour={getComputedStyle(document.documentElement).getPropertyValue('--theme-primary')} pct={pct} />
                 </g>
             </svg>
             <span className="percentage-text">{pct}<span className="percent-symbol">%</span></span>
