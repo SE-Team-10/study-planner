@@ -10,13 +10,16 @@ var cors = require("cors");
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
+if (!fs.existsSync('./userData')){
+    fs.mkdirSync('./userData');
+}
+
 app.use(cors());
 
 app.use(bodyParser.json())
 
 var currentUser = "admin";
 let accountData = require('./accountData.json');
-let data = require('./userData/admin.json');
 
 const errors = {
   semester: "Incorrect Semester",
