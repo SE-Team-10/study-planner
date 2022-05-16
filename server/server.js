@@ -318,7 +318,7 @@ app.post("/api/study-activity", (req,res) =>{
     for (let m in data.moduleEvents){
         for (let x in data.moduleEvents[m].tasks){
             if (data.moduleEvents[m].tasks[x].id === newStudyActivity.taskID){
-                data.moduleEvents[m].tasks[x].progressValue = (newStudyActivity.taskProgressValue % 100) + "%";
+                data.moduleEvents[m].tasks[x].progressValue = (newStudyActivity.taskProgressValue) + "%";
             }
         }
     }
@@ -394,6 +394,7 @@ app.get("/forceUpdate", async function(req, res){
   if (fs.existsSync(`./userData/${currentUser}.json`) && (data !== null) && (data)){
     const tempData = JSON.stringify(data)
     fs.writeFile(`./userData/${currentUser}.json`, tempData, (err) => {
+      console.log("file updated");
       if (err){
         throw err;
       }
