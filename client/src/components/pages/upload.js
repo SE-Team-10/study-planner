@@ -13,6 +13,10 @@ class Upload extends Component {
     console.log("Upload User: "+this.state.currentUser);
   };
 
+  componentDidMount() {
+    fetch('http://localhost:5000/forceUpdate');
+  }
+
   // On file select (from the pop up)
   onFileChange = event => {
     // Update the state

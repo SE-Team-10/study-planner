@@ -9,6 +9,7 @@ class GanttChart extends Component {
       ganttData:"",
       currentUser: props.location.state.sentUser,
     };
+
     console.log("Chart User: "+this.state.currentUser);
   };
 
@@ -35,6 +36,8 @@ class GanttChart extends Component {
 
 
     componentDidMount() {
+    fetch('http://localhost:5000/forceUpdate');
+
     fetch('/api/gantt')
         .then(r => r.json())
         .then(ganttData => this.setState({ganttData}, () => this.img(ganttData)))
